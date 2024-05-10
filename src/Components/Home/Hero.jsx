@@ -182,7 +182,7 @@ function Hero() {
 
             <div className="max-w-[1260px] px-4 md:px-0 mx-auto mt-32">
                 <h1 className='text-[32px] md:text-[48px] text-[#2b2b39] font-[700] text-center'>Start a campaign today</h1>
-                <p className='text-[18px] md:text-[24px] text-center text-gray-400 mt-5'>Campoal has a variety of features that make it the best place to start a petition.</p>
+                <p className='text-[18px]  text-center text-gray-400 mt-5'>Campoal has a variety of features that make it the best place to start a petition.</p>
 
                 <div className="grid grid-cols-12 mt-14 md:mt-24 items-center">
 
