@@ -1,11 +1,12 @@
 import { BsSend } from "react-icons/bs";
 import { MdLocationOn } from "react-icons/md";
-import { FaChevronLeft, FaChevronRight, FaTag, FaUser } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaFileExport, FaTag, FaUser } from "react-icons/fa";
 import { IoIosChatbubbles } from "react-icons/io";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useState } from "react";
+import { TbCash, TbChartSankey } from "react-icons/tb";
 
 const CustomNextArrow = ({ className, style, onClick }) => (
     <FaChevronRight className={`${className} text-gray-400 w-8 h-8 -mr-4`} onClick={onClick} />
@@ -98,36 +99,36 @@ function Hero() {
 
     return (
         <div className='mt-44'>
-            <div className='max-w-[960px] mx-auto'>
-                <h1 className='text-[64px] text-[#2b2b39] font-[700] text-center'>Make an impact to the world.</h1>
-                <p className='text-[24px] text-center mt-5'>We’re offer complete solution to launch your social movements.</p>
+            <div className='max-w-[960px] mx-auto px-4 md:px-0'>
+                <h1 className='  text-[48px] md:text-[64px] text-[#2b2b39] font-[700] text-center'>Make an impact to the world.</h1>
+                <p className=' text-[18px] md:text-[24px] text-center text-gray-400 mt-5'>We’re offer complete solution to launch your social movements.</p>
 
-                <div className='flex justify-center mt-16'>
-                    <div className='flex justify-normal space-x-6'>
-                        <button className='py-4 px-4 w-44 text-white bg-[#6059c9] text-[18px] font-bold rounded-full'>
+                <div className='flex justify-center mt-12 md:mt-16'>
+                    <div className='flex justify-normal space-x-4  md:space-x-6'>
+                        <button className='py-4 px-4 w-36 md:w-44 text-white bg-[#6059c9] md:text-[18px] font-bold rounded-full'>
                             Get Started
                         </button>
 
-                        <button className='py-4 px-4 w-44 text-[#6059c9] bg-[#6059c9] bg-opacity-10 text-[18px] font-bold rounded-full'>
+                        <button className='py-4 px-4 md:w-44 w-36 text-[#6059c9] bg-[#6059c9] bg-opacity-10 md:text-[18px] font-bold rounded-full'>
                             Learn more
                         </button>
                     </div>
                 </div>
             </div>
 
-            <div className='herobg pb-44'>
-                <div className='max-w-[980px] mx-auto'>
-                    <img src="/women.svg" alt="" />
+            <div className='herobg md:pb-44 mt-4 md:mt-0'>
+                <div className='max-w-[980px] px-4 md:px-0 mx-auto'>
+                    <img className="w-full" src="/women.svg" alt="" />
                 </div>
             </div>
-            <div className="bg-white rounded-lg max-w-[1100px] mx-auto -mt-44">
+            <div className="bg-white rounded-lg max-w-[1100px] mx-auto -mt-44 hidden md:block">
 
                 <Slider {...settings} >
                     {slidesData.map((slide, index) => (
                         <div key={index} className=''>
                             <div className='grid grid-cols-12 '>
                                 <div className='col-span-6'>
-                                <img className='rounded-lg rounded-r-none' src={slide.image} alt="" />
+                                    <img className='rounded-lg rounded-r-none' src={slide.image} alt="" />
                                 </div>
 
                                 <div className='col-span-6 px-4 py-4 '>
@@ -170,7 +171,7 @@ function Hero() {
                     ))}
                 </Slider>
             </div>
-            <div className="max-w-[1100px] mx-auto mt-4">
+            <div className="max-w-[1100px] mx-auto mt-4 hidden md:block">
                 <LowerSlider
                     lowerSliderImages={lowerSliderImages}
                     setSelectedImageIndex={setSelectedImageIndex}
@@ -178,6 +179,49 @@ function Hero() {
                 />
             </div>
 
+
+            <div className="max-w-[1260px] px-4 md:px-0 mx-auto mt-32">
+                <h1 className='text-[32px] md:text-[48px] text-[#2b2b39] font-[700] text-center'>Start a campaign today</h1>
+                <p className='text-[18px] md:text-[24px] text-center text-gray-400 mt-5'>Campoal has a variety of features that make it the best place to start a petition.</p>
+
+                <div className="grid grid-cols-12 mt-14 md:mt-24 items-center">
+
+                    <div className="col-span-12 md:col-span-5">
+                        <div className="flex items-center space-x-8">
+                            <div className="bg-[#6059c9] w-[80px] h-[60px] md:w-20 md:h-20 items-center flex justify-center text-white rounded-full px-2 py-2">
+                                <TbChartSankey className=" w-6 h-6 md:w-10 md:h-10" />
+                            </div>
+                            <div>
+                                <h2 className=" text-[18px] md:text-[20px] mt-5 font-bold">Manage your campaigns</h2>
+                                <p className='text-[14px] md:text-[18px]  mt-5 max-w-[360px] text-gray-500'>Track how many people signed the petition by week, month, year.</p>
+                            </div>
+                        </div>
+
+                        <div className="flex items-center space-x-8 mt-4 md:mt-10">
+                            <div className="bg-[#6059c9] w-[80px] h-[60px] md:w-20 md:h-20 items-center flex justify-center text-white rounded-full px-2 py-2">
+                                <TbCash className="w-6 h-6 md:w-10 md:h-10" />
+                            </div>
+                            <div>
+                                <h2 className="text-[18px] md:text-[20px] mt-5 font-bold">Collecting donation</h2>
+                                <p className='text-[14px] md:text-[18px]  mt-5 max-w-[360px] text-gray-500'>Campaign owners can set up to receive donations from supporters.</p>
+                            </div>
+                        </div>
+
+                        <div className="flex items-center space-x-8 mt-4 md:mt-10">
+                            <div className="bg-[#6059c9] w-[80px] h-[60px] md:w-20 md:h-20 items-center flex justify-center text-white rounded-full px-2 py-2">
+                                <FaFileExport className="w-6 h-6 md:w-10 md:h-10" />
+                            </div>
+                            <div>
+                                <h2 className="text-[18px] md:text-[20px] mt-5 font-bold">Export Signature</h2>
+                                <p className='text-[14px] md:text-[18px]  mt-5 max-w-[360px] text-gray-500'>Download signatures of supporters and submit to decision makers.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-span-12 md:col-span-7 mt-10 md:mt-0">
+                        <img className="w-full" src="/prop.svg" alt="" />
+                    </div>
+                </div>
+            </div>
 
         </div>
     );
