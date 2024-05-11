@@ -1,8 +1,9 @@
 
 import { BsSend } from 'react-icons/bs';
-import { FaUser } from 'react-icons/fa';
+import { FaEye, FaUser } from 'react-icons/fa';
+import { FaArrowUpRightFromSquare } from 'react-icons/fa6';
 import { IoIosChatbubbles } from 'react-icons/io';
-import { MdKeyboardArrowRight } from 'react-icons/md';
+import { MdKeyboardArrowRight, MdLocationOn } from 'react-icons/md';
 
 const petitionsData = [
     {
@@ -76,10 +77,35 @@ function Matters() {
             <div className='grid grid-cols-12 mt-24 gap-6'>
                 {petitionsData.map(petition => (
                     <div key={petition.id} className='col-span-12 md:col-span-12 lg:col-span-4'>
-                        <div className="max-w-md bg-white border border-gray-200 rounded-lg shadow">
-                            <a href="#">
+                        <div className=" bg-white border border-gray-200 rounded-lg shadow">
+                            <a href="#" className="relative block group">
                                 <img className="rounded-t-lg w-full" src={petition.image} alt="" />
+                                <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-60 transition-opacity rounded-t-lg"></div>
+                                <div className="absolute inset-0 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <div className=" text-white mt-28">
+                                        <div className='flex items-center justify-center'>
+                                            <FaArrowUpRightFromSquare className='w-8 h-8' />
+                                        </div>
+                                        <div className='mt-20 flex justify-between space-x-40 items-center'>
+                                            <div className='flex items-center  space-x-1 '>
+                                                <MdLocationOn />
+                                                <p>
+                                                    Al, USA
+                                                </p>
+                                            </div>
+
+                                            <div className='flex items-center  space-x-1 '>
+                                                <FaEye  />
+                                                <p>
+                                                   1.4k 
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </a>
+
+
                             <div className="p-5">
                                 <div className="flex space-x-2 items-center">
                                     <BsSend className="w-4 h-4 text-gray-500" />

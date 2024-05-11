@@ -108,7 +108,7 @@ export default function Navbar() {
     
 
     return (
-        <nav className={`fixed w-full bg-white border-b border-gray-200 transition-all duration-300 ${visible ? '  top-0  md:top-10 ' : '-top-20'}`}>
+        <nav className={`fixed w-full bg-white border-b border-gray-200 transition-all duration-300 ${visible ? '  top-0 z-50  md:top-10 ' : '-top-20'}`}>
             <div className="px-4 ">
                 <div className="flex justify-between h-16 items-center">
                     <div className="flex space-x-4 md:space-x-0">
