@@ -1,4 +1,5 @@
 import Activists from "../Components/Home/Activists"
+import Counter from "../Components/Home/Counter"
 import Fundraisers from "../Components/Home/Fundraisers"
 import Hero from "../Components/Home/Hero"
 import Matters from "../Components/Home/Matters"
@@ -12,6 +13,7 @@ function Home() {
             <Activists />
             <Platform />
             <Fundraisers/>
+            <Counter/>
         </div>
     )
 }

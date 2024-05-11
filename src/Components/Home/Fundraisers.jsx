@@ -92,7 +92,7 @@ const petitionsData = [
 function Fundraisers() {
     const settings = {
         dots: true,
-    dotsClass: 'slick-dots custom-dots mt-8', // Add padding-top
+        dotsClass: 'slick-dots custom-dots mt-8', // Add padding-top
         customPaging: i => (
             <CustomDot key={i} />
         ),
