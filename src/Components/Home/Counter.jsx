@@ -71,10 +71,10 @@ function Counter() {
             ref={contactRef}
         >
             <section className="flex flex-col py-24">
-                <div className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-y-5 lg:gap-y-0 gap-x-10 place-items-center mx-auto max-w-[1200px]  px-5">
+                <div className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-y-12 lg:gap-y-0 gap-x-10 place-items-center mx-auto max-w-[1200px]  px-5">
                     <div className="flex flex-col justify-center items-center px-4  justify-self-center">
                         <div className="flex flex-row justify-center items-center">
-                            <p className="font-bold text-[72px]  leading-9 text-primary ml-2">
+                            <p className="font-bold text-[64px] md:text-[72px]  leading-9 text-primary ml-2">
                                 {formatNumberWithCommas(projectsCount)}
                             </p>
                         </div>
@@ -84,7 +84,7 @@ function Counter() {
                     </div>
                     <div className="flex flex-col justify-center items-center px-4  justify-self-center">
                         <div className="flex flex-row justify-center items-center">
-                            <p className="font-bold text-[72px]  leading-9 text-primary ml-2">
+                            <p className="font-bold text-[64px] md:text-[72px]  leading-9 text-primary ml-2">
                                 {formatNumberWithCommas(articlesCount)}
                             </p>
                         </div>
@@ -94,7 +94,7 @@ function Counter() {
                     </div>
                     <div className="flex flex-col justify-center items-center px-4  justify-self-center">
                         <div className="flex flex-row justify-center items-center">
-                            <p className="font-bold text-[72px]  leading-9 text-primary ml-2">
+                            <p className="font-bold text-[64px] md:text-[72px]  leading-9 text-primary ml-2">
                                 {formatNumberWithCommas(meetingsCount)}
                             </p>
                         </div>
