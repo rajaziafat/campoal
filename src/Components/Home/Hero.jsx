@@ -211,7 +211,7 @@ function Hero() {
 
                     <div className="col-span-12 md:col-span-6 lg:col-span-5">
                         <div className="flex items-center space-x-8">
-                            <div className="bg-[#6059c9] w-[80px] h-[60px] md:w-20 md:h-20 items-center flex justify-center text-white rounded-full px-2 py-2">
+                            <div className="bg-[#6059c9] w-[65px] h-[60px] md:w-20 md:h-20 items-center flex justify-center text-white rounded-full px-2 py-2">
                                 <TbChartSankey className=" w-6 h-6 md:w-10 md:h-10" />
                             </div>
                             <div>
@@ -221,7 +221,7 @@ function Hero() {
                         </div>
 
                         <div className="flex items-center space-x-8 mt-4 md:mt-10">
-                            <div className="bg-[#6059c9] w-[80px] h-[60px] md:w-20 md:h-20 items-center flex justify-center text-white rounded-full px-2 py-2">
+                            <div className="bg-[#6059c9] w-[65px] h-[60px] md:w-20 md:h-20 items-center flex justify-center text-white rounded-full px-2 py-2">
                                 <TbCash className="w-6 h-6 md:w-10 md:h-10" />
                             </div>
                             <div>
@@ -231,7 +231,7 @@ function Hero() {
                         </div>
 
                         <div className="flex items-center space-x-8 mt-4 md:mt-10">
-                            <div className="bg-[#6059c9] w-[80px] h-[60px] md:w-20 md:h-20 items-center flex justify-center text-white rounded-full px-2 py-2">
+                            <div className="bg-[#6059c9] w-[65px] h-[60px] md:w-20 md:h-20 items-center flex justify-center text-white rounded-full px-2 py-2">
                                 <FaFileExport className="w-6 h-6 md:w-10 md:h-10" />
                             </div>
                             <div>
