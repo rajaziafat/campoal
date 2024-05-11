@@ -1,4 +1,5 @@
 
+import { FaMagic, FaUserTie } from "react-icons/fa";
 import { TfiHummer } from "react-icons/tfi";
 
 function Platform() {
@@ -12,12 +13,12 @@ function Platform() {
         {
             title: "Expert campaign advice",
             description: "Our staff provide advice for mobilizing support, generating media interest and lobbying elected officials.",
-            icon: <TfiHummer className="w-6 h-6 md:w-12 md:h-12 text-[#6059c9]" />,
+            icon: <FaUserTie  className="w-6 h-6 md:w-12 md:h-12 text-[#6059c9]" />,
         },
         {
             title: "Better activism technology",
             description: "We have big ideas for the future, but we need your financial support to fuel new technological development.",
-            icon: <TfiHummer className="w-6 h-6 md:w-12 md:h-12 text-[#6059c9]" />,
+            icon: <FaMagic   className="w-6 h-6 md:w-12 md:h-12 text-[#6059c9]" />,
         },
         // Add more objects for additional cards if needed
     ];
