@@ -94,3 +94,8 @@
       transform: translateX(100%);
   }
 }
+
+/* In your CSS file */
+.active-dot {
+  background-color: black !important;
+}
