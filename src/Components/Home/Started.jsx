@@ -1,5 +1,5 @@
 
-import { FaMagic, FaTrophy, FaUserTie } from "react-icons/fa";
+import {  FaTrophy } from "react-icons/fa";
 import { HiSpeakerphone } from "react-icons/hi";
 import { HiMiniRocketLaunch } from "react-icons/hi2";
 import { MdKeyboardArrowRight } from "react-icons/md";
@@ -26,13 +26,13 @@ function Started() {
     ];
 
     return (
-        <div className='max-w-[1100px] mx-auto px-4 md:px-0 mt-32'>
+        <div className='max-w-[1100px] mx-auto px-4  mt-32'>
             <h1 className='text-[32px] md:text-[48px] text-[#2b2b39] font-[700] text-center'>Get started in a few minutes</h1>
             <p className='text-[18px] text-center text-gray-400 mt-5'>Campoal supports a variety of the most popular category.</p>
-            <div className='grid grid-cols-12 mt-24 gap-6'>
+            <div className='grid grid-cols-12 justify-center mt-24 gap-6'>
                 {cardsData.map((card, index) => (
                     <div key={index} className="col-span-12 md:col-span-4">
-                        <div href="#" className="block max-w-sm p-6 pb-12  ">
+                        <div href="#" className="block w-full p-6 pb-12  ">
                             <div className="flex justify-center mt-8">
                                 <div className="bg-[#6059c9] w-[60px] h-[60px] md:w-24 md:h-24 items-center flex justify-center text-white rounded-full px-2 py-2">
                                     {card.icon}

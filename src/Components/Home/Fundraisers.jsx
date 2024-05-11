@@ -1,10 +1,7 @@
-
 import Slider from 'react-slick';
-import { FaArrowRight, FaChevronRight, FaEye, FaUser } from 'react-icons/fa';
+import { FaChevronRight, FaEye, FaUser } from 'react-icons/fa';
 import { MdLocationOn, MdKeyboardArrowRight } from 'react-icons/md';
 import { FaArrowUpRightFromSquare, FaChevronLeft } from 'react-icons/fa6';
-
-
 
 const CustomNextArrow = ({ className, style, onClick }) => (
     <FaChevronRight className={`${className} text-gray-400 w-8 h-8 -mr-4`} onClick={onClick} />
@@ -20,10 +17,6 @@ const CustomDot = ({ onClick, active }) => (
         onClick={onClick}
     />
 );
-
-
-
-
 
 const petitionsData = [
     {
@@ -92,7 +85,7 @@ const petitionsData = [
 function Fundraisers() {
     const settings = {
         dots: true,
-        dotsClass: 'slick-dots custom-dots mt-8', // Add padding-top
+        dotsClass: 'slick-dots custom-dots mt-8',
         customPaging: i => (
             <CustomDot key={i} />
         ),
@@ -104,31 +97,19 @@ function Fundraisers() {
         prevArrow: <CustomPrevArrow />,
         responsive: [
             {
-                breakpoint: 640,
+                breakpoint: 1024,
                 settings: {
                     slidesToShow: 1,
-                    arrows: false, // Hide arrows on small screens
-                    dots: true,   // Show dots on small screens
+                    arrows: false,
+                    dots: true,
                 }
             },
-            {
-                breakpoint: 768, // Medium screens
-                settings: {
-                    dots: false,   // Hide dots on medium screens
-                }
-            },
-            {
-                breakpoint: 1024, // Large screens
-                settings: {
-                    dots: false,   // Hide dots on large screens
-                }
-            }
+          
         ]
     };
-
     return (
         <div className='bg-[#f5efe0] py-32 mt-32'>
-            <div className='max-w-[1100px] mx-auto px-4 md:px-0  '>
+            <div className='max-w-[1100px] mx-auto px-4  '>
                 <h1 className='text-[32px] md:text-[48px] text-[#2b2b39] font-[700] '>Fundraisers</h1>
                 <p className='text-[18px]   text-gray-400 mt-5'>These petitions need your help to achieve victory.</p>
                 <div>

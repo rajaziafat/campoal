@@ -6,7 +6,7 @@ import { TbChartSankey } from 'react-icons/tb'
 function Activists() {
     return (
         <div className='grid grid-cols-12 mt-20  '>
-            <div className='col-span-12 md:col-span-6 py-10 px-4 md:px-0 md:py-48 flex justify-center md:justify-end items-center bg-[#6059c9]'>
+            <div className='col-span-12 md:col-span-6 py-10 px-4  md:py-48 flex justify-center md:justify-end items-center bg-[#6059c9]'>
                 <div className=' mr-0 md:mr-20'>
                     <div className="bg-[#fff] w-[60px] h-[60px] md:w-24 md:h-24 items-center flex justify-center text-white rounded-full px-2 py-2">
                         <FaUserTie className=" w-6 h-6 md:w-12 md:h-12 text-[#6059c9]" />

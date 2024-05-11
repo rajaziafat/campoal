@@ -1,7 +1,7 @@
 
 import Slider from 'react-slick';
-import { FaArrowRight, FaChevronRight, FaEye, FaUser } from 'react-icons/fa';
-import { MdLocationOn, MdKeyboardArrowRight } from 'react-icons/md';
+import {  FaChevronRight, FaEye } from 'react-icons/fa';
+
 import { FaArrowUpRightFromSquare, FaChevronLeft } from 'react-icons/fa6';
 import { SlCalender } from 'react-icons/sl';
 import { IoIosChatbubbles } from 'react-icons/io';
@@ -94,7 +94,7 @@ const petitionsData = [
 function News() {
     const settings = {
         dots: true,
-        dotsClass: 'slick-dots custom-dots mt-8', // Add padding-top
+        dotsClass: 'slick-dots custom-dots mt-8',
         customPaging: i => (
             <CustomDot key={i} />
         ),
@@ -106,25 +106,14 @@ function News() {
         prevArrow: <CustomPrevArrow />,
         responsive: [
             {
-                breakpoint: 640,
+                breakpoint: 1024,
                 settings: {
                     slidesToShow: 1,
-                    arrows: false, // Hide arrows on small screens
-                    dots: true,   // Show dots on small screens
+                    arrows: false,
+                    dots: true,
                 }
             },
-            {
-                breakpoint: 768, // Medium screens
-                settings: {
-                    dots: false,   // Hide dots on medium screens
-                }
-            },
-            {
-                breakpoint: 1024, // Large screens
-                settings: {
-                    dots: false,   // Hide dots on large screens
-                }
-            }
+          
         ]
     };
 

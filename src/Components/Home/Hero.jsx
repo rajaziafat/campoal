@@ -25,7 +25,18 @@ function LowerSlider({ lowerSliderImages, setSelectedImageIndex, selectedImageIn
         className: "center",
         centerMode: true,
         slidesToShow: 6,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 5,
+                }
+            }
+
+        ]
+
     };
 
     return (
@@ -77,7 +88,17 @@ function Hero() {
         slidesToShow: 1,
         slidesToScroll: 1,
         nextArrow: <CustomNextArrow />,
-        prevArrow: <CustomPrevArrow />
+        prevArrow: <CustomPrevArrow />,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    arrows: false,
+
+                }
+            }
+
+        ]
     };
 
 
@@ -99,7 +120,7 @@ function Hero() {
 
     return (
         <div className='mt-44'>
-            <div className='max-w-[960px] mx-auto px-4 md:px-0'>
+            <div className='max-w-[960px] mx-auto px-4 '>
                 <h1 className='  text-[48px] md:text-[64px] text-[#2b2b39] font-[700] text-center'>Make an impact to the world.</h1>
                 <p className=' text-[18px] md:text-[24px] text-center text-gray-400 mt-5'>We’re offer complete solution to launch your social movements.</p>
 
@@ -121,57 +142,59 @@ function Hero() {
                     <img className="w-full" src="/women.svg" alt="" />
                 </div>
             </div>
-            <div className="bg-white rounded-lg max-w-[1100px] mx-auto -mt-44 hidden md:block">
+            <div className="px-12">
+                <div className="bg-white rounded-lg max-w-[1100px] mx-auto  -mt-44 hidden md:block">
 
-                <Slider {...settings} >
-                    {slidesData.map((slide, index) => (
-                        <div key={index} className=''>
-                            <div className='grid grid-cols-12 '>
-                                <div className='col-span-6'>
-                                    <img className='rounded-lg rounded-r-none' src={slide.image} alt="" />
-                                </div>
-
-                                <div className='col-span-6 px-4 py-4 '>
-                                    <div className="flex space-x-2 items-center">
-                                        <BsSend className="w-5 h-5 text-gray-500" />
-                                        <h2 className="text-[19px] text-gray-500">{slide.title}</h2>
+                    <Slider {...settings} >
+                        {slidesData.map((slide, index) => (
+                            <div key={index} className=''>
+                                <div className='grid grid-cols-12 '>
+                                    <div className='col-span-6'>
+                                        <img className='rounded-lg rounded-r-none' src={slide.image} alt="" />
                                     </div>
-                                    <h2 className="text-[24px] text-black mt-5 font-bold">{slide.description}</h2>
-                                    <p className="text-[16px] text-gray-500 mt-5">{slide.description}</p>
-                                    <div className="bxshadow bg-white mt-2">
-                                        <div className="flex items-center space-x-2 ">
-                                            <MdLocationOn className="w-6 h-6 text-gray-500" />
-                                            <p className="text-[16px] font-[400] text-gray-500">{slide.location}</p>
+
+                                    <div className='col-span-6 px-4 py-4 '>
+                                        <div className="flex space-x-2 items-center">
+                                            <BsSend className="w-5 h-5 text-gray-500" />
+                                            <h2 className="text-[19px] text-gray-500">{slide.title}</h2>
                                         </div>
-                                        <div className="w-full mt-5 rounded-full h-2 bg-[#d3ccc1] relative overflow-hidden">
-                                            <div className="bg-[#6059c9] h-2 rounded-full absolute left-0 top-0" style={{ width: "45%" }}>
-                                                <div className="shine" style={{ width: "100%" }}></div>
+                                        <h2 className="text-[24px] text-black mt-5 font-bold">{slide.description}</h2>
+                                        <p className="text-[16px] text-gray-500 mt-5">{slide.description}</p>
+                                        <div className="bxshadow bg-white mt-2">
+                                            <div className="flex items-center space-x-2 ">
+                                                <MdLocationOn className="w-6 h-6 text-gray-500" />
+                                                <p className="text-[16px] font-[400] text-gray-500">{slide.location}</p>
                                             </div>
-                                        </div>
-                                        <div className="mt-5 ">
-                                            <div className="flex space-x-4 items-center">
-                                                <button className="text-white bg-[#6059c9] px-2 py-1.5 rounded-lg flex items-center space-x-1">
-                                                    <FaUser className="w-3 h-3" />
-                                                    <p className="text-[12px] font-bold  mt-0.5">{slide.supporters}</p>
-                                                </button>
-                                                <button className="text-gray-500 bg-[#ece7e0] px-2 py-1.5 rounded-lg flex items-center space-x-1">
-                                                    <FaTag className="w-3 h-3" />
-                                                    <p className="text-[12px] font-bold  mt-0.5">{slide.category}</p>
-                                                </button>
-                                                <button className="text-gray-500 bg-[#ece7e0] px-2 py-1.5 rounded-lg flex items-center space-x-1">
-                                                    <IoIosChatbubbles className="w-3 h-3" />
-                                                    <p className="text-[12px] font-bold  mt-0.5">{slide.comments}</p>
-                                                </button>
+                                            <div className="w-full mt-5 rounded-full h-2 bg-[#d3ccc1] relative overflow-hidden">
+                                                <div className="bg-[#6059c9] h-2 rounded-full absolute left-0 top-0" style={{ width: "45%" }}>
+                                                    <div className="shine" style={{ width: "100%" }}></div>
+                                                </div>
+                                            </div>
+                                            <div className="mt-5 ">
+                                                <div className="flex space-x-4 items-center">
+                                                    <button className="text-white bg-[#6059c9] px-2 py-1.5 rounded-lg flex items-center space-x-1">
+                                                        <FaUser className="w-3 h-3" />
+                                                        <p className="text-[12px] font-bold  mt-0.5">{slide.supporters}</p>
+                                                    </button>
+                                                    <button className="text-gray-500 bg-[#ece7e0] px-2 py-1.5 rounded-lg flex items-center space-x-1">
+                                                        <FaTag className="w-3 h-3" />
+                                                        <p className="text-[12px] font-bold  mt-0.5">{slide.category}</p>
+                                                    </button>
+                                                    <button className="text-gray-500 bg-[#ece7e0] px-2 py-1.5 rounded-lg flex items-center space-x-1">
+                                                        <IoIosChatbubbles className="w-3 h-3" />
+                                                        <p className="text-[12px] font-bold  mt-0.5">{slide.comments}</p>
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
-                </Slider>
+                        ))}
+                    </Slider>
+                </div>
             </div>
-            <div className="max-w-[1100px] mx-auto mt-4 hidden md:block">
+            <div className="max-w-[1100px] mx-auto mt-4 hidden px-12 md:block">
                 <LowerSlider
                     lowerSliderImages={lowerSliderImages}
                     setSelectedImageIndex={setSelectedImageIndex}
@@ -180,13 +203,13 @@ function Hero() {
             </div>
 
 
-            <div className="max-w-[1260px] px-4 md:px-0 mx-auto mt-32">
+            <div className="max-w-[1260px] px-4  mx-auto mt-32">
                 <h1 className='text-[32px] md:text-[48px] text-[#2b2b39] font-[700] text-center'>Start a campaign today</h1>
                 <p className='text-[18px]  text-center text-gray-400 mt-5'>Campoal has a variety of features that make it the best place to start a petition.</p>
 
-                <div className="grid grid-cols-12 mt-14 md:mt-24 items-center">
+                <div className="grid grid-cols-12 mt-14 md:mt-24 px-4  items-center">
 
-                    <div className="col-span-12 md:col-span-5">
+                    <div className="col-span-12 md:col-span-6 lg:col-span-5">
                         <div className="flex items-center space-x-8">
                             <div className="bg-[#6059c9] w-[80px] h-[60px] md:w-20 md:h-20 items-center flex justify-center text-white rounded-full px-2 py-2">
                                 <TbChartSankey className=" w-6 h-6 md:w-10 md:h-10" />
@@ -217,7 +240,7 @@ function Hero() {
                             </div>
                         </div>
                     </div>
-                    <div className="col-span-12 md:col-span-7 mt-10 md:mt-0">
+                    <div className="col-span-12 md:col-span-6 lg:col-span-7 mt-10 md:mt-0">
                         <img className="w-full" src="/prop.svg" alt="" />
                     </div>
                 </div>

@@ -71,7 +71,7 @@ const petitionsData = [
 
 function Matters() {
     return (
-        <div className='max-w-[1100px] mx-auto px-4 md:px-0 mt-32'>
+        <div className='max-w-[1100px] mx-auto px-4  mt-32'>
             <h1 className='text-[32px] md:text-[48px] text-[#2b2b39] font-[700] text-center'>Your voice matters</h1>
             <p className='text-[18px]  text-center text-gray-400 mt-5'>These petitions need your help to achieve victory.</p>
             <div className='grid grid-cols-12 mt-24 gap-6'>
