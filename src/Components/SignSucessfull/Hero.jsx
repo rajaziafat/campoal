@@ -4,6 +4,7 @@ import { FaCheck, FaCode, FaCopy, FaDollarSign, FaFacebookF, FaGoogle, FaTwitter
 import { FaShareNodes } from 'react-icons/fa6'
 import { HiDotsHorizontal } from 'react-icons/hi'
 import { IoIosLink, IoMdArrowDropdown, IoMdMail } from 'react-icons/io'
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 
 function Hero() {
 
@@ -217,12 +218,32 @@ function Hero() {
                         </div>
 
                         <button className='bg-[#6059c9] mt-4 text-white flex items-center space-x-2 justify-center text-[17px] text-center w-full   font-bold px-4 py-3.5 rounded-xl'>
-                          
 
-                           Contribute
+
+                            Contribute
                         </button>
 
 
+                    </div>
+                </div>
+
+
+
+                <div className='flex justify-center pb-24'>
+                    <div className='flex items-center space-x-4'>
+                        <button className='px-4 w-24 text-gray-400 flex items-center space-x-2 py-3  border rounded-lg'>
+                            <MdKeyboardArrowLeft />
+
+                            <p> Back</p>
+                        </button>
+
+                        <button className='px-4 w-24 text-gray-400 flex items-center space-x-2 py-3  border rounded-lg'>
+
+
+                            <p> Home</p>
+
+                            <MdKeyboardArrowRight />
+                        </button>
                     </div>
                 </div>
             </div>
