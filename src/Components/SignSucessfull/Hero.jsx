@@ -1,10 +1,27 @@
 
-import { FaCheck, FaCode, FaCopy, FaFacebookF, FaGoogle, FaTwitter } from 'react-icons/fa'
+import { useState } from 'react';
+import { FaCheck, FaCode, FaCopy, FaDollarSign, FaFacebookF, FaGoogle, FaTwitter } from 'react-icons/fa'
 import { FaShareNodes } from 'react-icons/fa6'
 import { HiDotsHorizontal } from 'react-icons/hi'
 import { IoIosLink, IoMdArrowDropdown, IoMdMail } from 'react-icons/io'
 
 function Hero() {
+
+    const [selectedValue, setSelectedValue] = useState('5.00');
+    const [customValue, setCustomValue] = useState('');
+
+    const handleButtonClick = (value) => {
+        setSelectedValue(value);
+        setCustomValue('');
+    };
+
+    const handleInputChange = (e) => {
+        const value = e.target.value;
+        setSelectedValue(value);
+        setCustomValue(value);
+    };
+
+
     return (
         <div className='pt-32'>
 
@@ -30,7 +47,7 @@ function Hero() {
 
 
                 <div className='grid grid-cols-12 py-16'>
-                    <div className='col-span-12 md:col-span-6 border-r px-4'>
+                    <div className='col-span-12 md:col-span-6 border-r px-4 pb-12'>
                         <div className='flex space-x-2'>
                             <IoMdArrowDropdown className='w-10 h-10 mt-1' />
 
@@ -121,6 +138,91 @@ function Hero() {
                                 <p>  Copy</p>
                             </button>
                         </div>
+                    </div>
+
+                    <div className='col-span-12 md:col-span-6 pb-2  px-4'>
+                        <div className='flex space-x-2'>
+                            <IoMdArrowDropdown className='w-10 h-10 mt-1' />
+
+                            <h2 className='text-[24px] font-bold text-center text-[#333] mt-4 '> Contribute to campaign</h2>
+                        </div>
+                        <div className='mt-4 px-6 py-4 rounded-xl leading-6 bg-[#fffae6]'>
+                            <b> Notice:</b>  Test mode is enabled. While in test mode no live donations are processed.
+                        </div>
+
+                        <div className='mt-2 px-1 py-4 rounded-xl leading-6 '>
+                            Within an hour, this petition could have thousands more supporters if everyone chipped in the price of a coffee. Can you help reach this petition’s signature goal?
+                        </div>
+
+
+                        <div>
+                            <div>
+                                <div className="relative mt-2">
+                                    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                        <FaDollarSign />
+                                    </div>
+                                    <input
+                                        type="number"
+                                        id=""
+                                        className="block p-2 pl-12 text-lg text-gray-900 border w-32 border-gray-300 rounded-lg bg-gray-50 focus:ring-[#6059c9] focus:border-[#6059c9] placeholder-gray-400 focus:placeholder-gray-600"
+                                        required
+                                        value={customValue || selectedValue}
+                                        onChange={handleInputChange}
+                                    />
+                                </div>
+
+                                <div className='flex flex-wrap gap-1 items-center'>
+                                    <button
+                                        className={`bg-${selectedValue === '5.00' ? '[#6059c9]' : '[#fffae6]'} mt-4 text-${selectedValue === '5.00' ? 'white' : 'gray-400'} flex items-center space-x-1 justify-center text-[17px] text-center font-bold px-4 py-3 rounded-lg`}
+                                        onClick={() => handleButtonClick('5.00')}
+                                    >
+                                        <FaDollarSign />
+                                        <p>5.00</p>
+                                    </button>
+
+                                    <button
+                                        className={`bg-${selectedValue === '10.00' ? '[#6059c9]' : '[#fffae6]'} mt-4 text-${selectedValue === '10.00' ? 'white' : 'gray-400'} flex items-center space-x-1 justify-center text-[17px] text-center font-bold px-4 py-3 rounded-lg`}
+                                        onClick={() => handleButtonClick('10.00')}
+                                    >
+                                        <FaDollarSign />
+                                        <p>10.00</p>
+                                    </button>
+
+                                    <button
+                                        className={`bg-${selectedValue === '20.00' ? '[#6059c9]' : '[#fffae6]'} mt-4 text-${selectedValue === '20.00' ? 'white' : 'gray-400'} flex items-center space-x-1 justify-center text-[17px] text-center font-bold px-4 py-3 rounded-lg`}
+                                        onClick={() => handleButtonClick('20.00')}
+                                    >
+                                        <FaDollarSign />
+                                        <p>20.00</p>
+                                    </button>
+
+                                    <button
+                                        className={`bg-${selectedValue === '50.00' ? '[#6059c9]' : '[#fffae6]'} mt-4 text-${selectedValue === '50.00' ? 'white' : 'gray-400'} flex items-center space-x-1 justify-center text-[17px] text-center font-bold px-4 py-3 rounded-lg`}
+                                        onClick={() => handleButtonClick('50.00')}
+                                    >
+                                        <FaDollarSign />
+                                        <p>50.00</p>
+                                    </button>
+
+                                    <button
+                                        className={`bg-${selectedValue === 'Custom' ? '[#6059c9]' : '[#fffae6]'} mt-2 text-${selectedValue === 'Custom' ? 'white' : 'gray-400'} flex items-center space-x-1 justify-center text-[17px] text-center font-bold px-4 py-3 rounded-lg`}
+                                        onClick={() => handleButtonClick('Custom')}
+                                    >
+                                        <FaDollarSign />
+                                        <p>Custom</p>
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <button className='bg-[#6059c9] mt-4 text-white flex items-center space-x-2 justify-center text-[17px] text-center w-full   font-bold px-4 py-3.5 rounded-xl'>
+                          
+
+                           Contribute
+                        </button>
+
+
                     </div>
                 </div>
             </div>
