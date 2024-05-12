@@ -5,21 +5,22 @@ import { BsThreeDotsVertical } from 'react-icons/bs';
 import { IoBag } from 'react-icons/io5';
 import { IoMdArrowDropright } from 'react-icons/io';
 import { MdLocationPin } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 const navigation = [
-    { name: 'Compaings', href: '#', current: true },
-    { name: 'Fundraising', href: '#', current: false },
-    { name: 'Mambership', href: '#', current: false },
-    { name: 'Blog', href: '#', current: false },
+    { name: 'Compaings', to: '/campaigns', current: true },
+    { name: 'Fundraising', to: '#', current: false },
+    { name: 'Mambership', to: '#', current: false },
+    { name: 'Blog', to: '#', current: false },
 ];
 
 const navigationsm = [
-    { name: 'Compaings', href: '#', current: true },
-    { name: 'Fundraising', href: '#', current: false },
-    { name: 'Mambership', href: '#', current: false },
-    { name: 'Blog', href: '#', current: false },
-    { name: 'Shop', href: '#', current: false },
-    { name: 'Support Desk', href: '#', current: false },
+    { name: 'Compaings', to: 'campaigns', current: true },
+    { name: 'Fundraising', to: '#', current: false },
+    { name: 'Mambership', to: '#', current: false },
+    { name: 'Blog', to: '#', current: false },
+    { name: 'Shop', to: '#', current: false },
+    { name: 'Support Desk', to: '#', current: false },
 ];
 
 
@@ -91,21 +92,21 @@ export default function Navbar() {
 
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
-  
+
     useEffect(() => {
-      const handleScroll = () => {
-        const currentScrollPos = window.pageYOffset;
-        setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 100);
-        setPrevScrollPos(currentScrollPos);
-      };
-  
-      window.addEventListener('scroll', handleScroll);
-  
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
+        const handleScroll = () => {
+            const currentScrollPos = window.pageYOffset;
+            setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 100);
+            setPrevScrollPos(currentScrollPos);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
     }, [prevScrollPos, visible]);
-    
+
 
     return (
         <nav className={`fixed w-full bg-white border-b border-gray-200 transition-all duration-300 ${visible ? '  top-0 z-50  md:top-10 ' : '-top-20'}`}>
@@ -145,9 +146,9 @@ export default function Navbar() {
                     <div className="hidden lg:flex lg:items-center lg:ml-6">
                         <div className="space-x-4 flex items-center">
                             {navigation.map((item) => (
-                                <a
+                                <Link
                                     key={item.name}
-                                    href={item.href}
+                                    to={item.to}
                                     className={classNames(
                                         item.current ? ' hover:bg-[#6059c9] hover:bg-opacity-5 rounded-xl' : ' hover:bg-[#6059c9] hover:bg-opacity-5 rounded-xl',
                                         'px-3 py-2 text-sm'
@@ -155,7 +156,7 @@ export default function Navbar() {
                                     aria-current={item.current ? 'page' : undefined}
                                 >
                                     {item.name}
-                                </a>
+                                </Link>
                             ))}
                             <div className='relative'>
                                 <button
