@@ -254,8 +254,6 @@ function Hero() {
     const indexOfFirstPetition = indexOfLastPetition - petitionsPerPage;
     const currentPetitions = petitionsData.slice(indexOfFirstPetition, indexOfLastPetition);
 
-
-
     return (
         <>
             <div className='bg-white pb-20'>
@@ -552,7 +550,7 @@ function Hero() {
 
                     </div>
                     <div className='grid grid-cols-12 mt-12 gap-6'>
-                        {petitionsData.map(petition => (
+                        {currentPetitions.map(petition => (
                             <div key={petition.id} className='col-span-12 md:col-span-12 lg:col-span-4'>
                                 <div className=" bg-white border border-gray-200 rounded-lg shadow">
                                     <a href="#" className="relative block group">
