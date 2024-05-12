@@ -30,7 +30,7 @@ function Hero() {
 
 
                 <div className='grid grid-cols-12 py-16'>
-                    <div className='col-span-12 md:col-span-6'>
+                    <div className='col-span-12 md:col-span-6 border-r px-4'>
                         <div className='flex space-x-2'>
                             <IoMdArrowDropdown className='w-10 h-10 mt-1' />
 
@@ -68,7 +68,7 @@ function Hero() {
                             <p> Share on Facebook</p>
                         </button>
 
-                        <div className="flex items-center space-x-10 mt-4">
+                        <div className="flex items-center space-x-8 mt-8 px-4">
                             <div className="px-3 py-2 border  text-gray-400 duration-150 ease-in-out rounded-md hover:border-black">
                                 <IoMdMail />
 
