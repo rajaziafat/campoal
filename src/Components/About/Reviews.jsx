@@ -48,7 +48,7 @@ function Reviews() {
 
                     <Slider {...settings}>
                         {reviewsData.map((review, index) => (
-                            <div key={index} className="">
+                            <div key={index} className="px-4">
                                 <div className="bg-[#f5efe0] rounded-xl px-4 py-8 flex justify-center items-center ">
                                     <div className="">
                                         <p className="font-normal px-4 text-[16px] md:text-[18px] max-w-[480px] tracking-wide leading-7 md:mt-5 text-gray-500">
