@@ -86,7 +86,7 @@ function Hero() {
                             <p> Share on Facebook</p>
                         </button>
 
-                        <div className="flex items-center space-x-8 mt-8 px-4">
+                        <div className="flex items-center space-x-2 md:space-x-8 mt-8 md:px-4">
                             <div className="px-3 py-2 border  text-gray-400 duration-150 ease-in-out rounded-md hover:border-black">
                                 <IoMdMail />
 
