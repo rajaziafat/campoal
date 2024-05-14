@@ -57,7 +57,7 @@ function BeYourChange() {
             <div>
                 <div className="bg-[#f5efe0] mt-18 rounded-xl px-4 md:max-h-[360px] ">
                     <div className="grid grid-cols-12 mt-24  md:px-12 mx-auto ">
-                        <div className="col-span-12 md:col-span-6 md:mt-12 px-8 md:px-0 ">
+                        <div className="col-span-12 md:col-span-6 md:mt-12 px-1 md:px-0 ">
                             <h5 className="mb-2 text-[36px] font-bold  mt-10 tracking-tight text-gray-900">
                             Be your change
                             </h5>
