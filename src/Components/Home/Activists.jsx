@@ -1,7 +1,7 @@
-import React from 'react'
+
 import { FaHandPointer, FaUserTie } from 'react-icons/fa'
 import { MdKeyboardArrowRight } from 'react-icons/md'
-import { TbChartSankey } from 'react-icons/tb'
+
 
 function Activists() {
     return (

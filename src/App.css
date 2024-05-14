@@ -101,9 +101,25 @@
 }
 
 
-.ourvalues {
-  /* background-image: url("../public/wave2.png");
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: cover; */
+
+
+.slide-enter {
+  max-height: 0;
+  overflow: hidden;
 }
+
+.slide-enter-active {
+  max-height: 500px; /* Adjust this value to accommodate the maximum height of your answer */
+  transition: max-height 600ms ease-out;
+}
+
+.slide-exit {
+  max-height: 500px; /* Adjust this value to accommodate the maximum height of your answer */
+}
+
+.slide-exit-active {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 600ms ease-in;
+}
+
