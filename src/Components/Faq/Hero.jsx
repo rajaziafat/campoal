@@ -6,7 +6,7 @@ import { MdKeyboardArrowRight } from 'react-icons/md'
 function Hero() {
     return (
         <div className='grid grid-cols-12 mt-14  '>
-            <div className='col-span-12 md:col-span-6 py-10 px-4  md:py-56 flex justify-center md:justify-end items-center bg-[#6059c9]'>
+            <div className='col-span-12 md:col-span-6 py-10 px-4  md:py-50 flex justify-center md:justify-end items-center bg-[#6059c9]'>
                 <div className=' mr-0 md:mr-20'>
                     <div className='max-w-[490px]'>
                         <h2 className=" text-[60px] text-white mt-0 font-bold">The answers for your question</h2>
