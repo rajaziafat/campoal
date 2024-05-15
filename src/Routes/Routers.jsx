@@ -5,7 +5,8 @@ import Campaigns from '../Pages/Campaigns'
 import SignSucessfull from '../Pages/SignSucessfull'
 import About from '../Pages/About'
 import Faq from '../Pages/Faq'
-import Signup from '../Pages/Signup'
+import SignIn from '../Pages/SignIn'
+import Register from '../Pages/Register'
 
 function Routers() {
   return (
@@ -15,8 +16,8 @@ function Routers() {
       <Route path='/sign-sucessfull' element={<SignSucessfull />} />
       <Route path='/about' element={<About />} />
       <Route path='/faq' element={<Faq />} />
-      <Route path='/signup' element={<Signup />} />
-
+      <Route path='/sign-in' element={<SignIn />} />
+      <Route path='/register' element={<Register />} />
     </Routes>
   )
 }

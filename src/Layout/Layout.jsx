@@ -8,7 +8,7 @@ function Layout() {
     const location = useLocation();
 
     // Define an array of paths where Navbar, Footer, and Bar should not be rendered
-    const pathsWithoutNavbarFooterBar = ["/signup", "/register"];
+    const pathsWithoutNavbarFooterBar = ["/sign-in", "/register"];
 
     // Function to check if the current path is in the array
     const shouldRenderNavbarFooterBar = !pathsWithoutNavbarFooterBar.includes(location.pathname);
