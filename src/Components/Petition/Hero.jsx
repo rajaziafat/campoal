@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { AiFillLike } from "react-icons/ai";
+import { BiSolidShare } from "react-icons/bi";
 import { BsSend } from "react-icons/bs"
 import { CiSaveDown2 } from "react-icons/ci"
 import { FaArrowDown, FaExternalLinkAlt, FaEye, FaTag } from "react-icons/fa"
+import { FaUserLarge } from "react-icons/fa6";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io"
 
 
@@ -99,7 +102,7 @@ function Hero() {
 
                 <div className="grid grid-cols-12 mt-16">
                     <div className="col-span-12 lg:col-span-8">
-                        <div className=" border-b  lg:flex justify-between items-center hidden lg:block ">
+                        <div className="  sticky top-10 bg-white border-b  lg:flex justify-between items-center hidden lg:block ">
                             <ul className="flex text-sm  space-x-2 py-2" >
                                 <li className="px-4 py-1 hover:bg-[#6059c9] cursor-pointer rounded-md  hover:bg-opacity-5 flex items-center ">
                                     Story
@@ -343,6 +346,140 @@ function Hero() {
                         <div className="border-b mt-10">
                             <h2 className="mb-2 text-[22px] font-bold" >Updates</h2>
                         </div>
+
+
+                        <div className="mt-10 bg-[#F9F9FF] px-4 py-4 text-gray-500 rounded-xl">
+                            <div className="">
+                                <div className="flex items-center space-x-2">
+                                    <BiSolidShare className="w-6 h-6" />
+                                    <h3 className="text-[16px]"> Decision Maker Response</h3>
+                                </div>
+                                <hr className="mt-4" />
+                                <div className="flex justify-between items-center mt-6">
+                                    <div>
+                                        <h2 className="text-[22px] font-bold text-black mt-2"> Cory Booker’s response</h2>
+                                        <p className="mt-4 text-[16px] leading-6 "> Pamela’s tragic and harrowing story should disturb every American. Under no circumstances should we treat any of our fellow citizens with such savage disregard and lack of basic human dignity ...</p>
+                                    </div>
+                                    <img className="w-28 rounded-xl hidden md:flex" src="/150.png" alt="" />
+                                </div>
+                                <hr className="mt-4" />
+                                <p className="text-end text-sm mt-4">6 years ago</p>
+                            </div>
+                        </div>
+
+                        <div className="mt-10 bg-[#F9F9FF] px-4 py-4 text-gray-500 rounded-xl">
+                            <div className="flex items-center space-x-3">
+                                <img className="rounded-full w-10" src="/221.jpg" alt="" />
+                                <p className="text-md">
+                                    <b className="text-black">John Kenedy </b>
+                                    ·
+                                    <br />  <span className="text-sm">
+                                        San Francisco County, CA, US
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div className="border-b mt-12">
+                            <h2 className="mb-2 text-[22px] font-bold" >6 Comments</h2>
+                        </div>
+
+                        <div className="flex items-center space-x-3 mt-6">
+                            <img className="rounded-full w-10" src="/221.jpg" alt="" />
+                            <div className="text-sm  flex items-center space-x-2 font-bold  text-gray-500">
+                                <p>  banlong635</p>
+
+                                <span className="text-[12px] text-gray-400">
+                                    6 years ago · 1 likes
+                                </span>
+
+
+
+                            </div>
+
+                        </div>
+                        <div className="ml-14">
+
+                            <h3 className="text-[13px]">Sign</h3>
+                            <div className="flex items-center space-x-1 mt-2" >
+
+                                <AiFillLike className="w-3 h-3 text-gray-500" />
+                                <p className="text-sm  text-gray-500"> Like</p>
+
+                            </div>
+                        </div>
+
+
+
+
+                        <h2 className="mb-2 text-[18px] font-bold mt-10" >Write a Reply or Comment</h2>
+                        <p className="text-[16px] mt-4"  >You should Sign In or Sign Up account to post comment.</p>
+
+                        <div className="bg-[#F9F9FF] py-4 px-4 mt-5" >
+                            <div className="flex space-x-2">
+                                <img className="rounded-full w-8 h-8 mt-5" src="/221.jpg" alt="" />
+                                <div className="w-full">
+
+
+
+                                    <div className="grid grid-cols-12">
+                                        <div className="col-span-12">
+                                            <textarea id="message" rows="4" className="block p-2.5 w-full text-md text-gray-900  rounded-lg border mt-5   focus:ring-none focus:border-[#6059c9] placeholder-gray-600" placeholder="Add a comment "></textarea>
+                                        </div>
+                                        <div className=" col-span-12  md:col-span-6 ">
+                                            <div className="relative px-1 mt-4">
+
+                                                <input
+                                                    type="text"
+                                                    id="first_name"
+                                                    className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#6059c9] focus:border-[#6059c9] block w-full p-2.5"
+                                                    placeholder="first name"
+                                                    required=""
+                                                />
+
+                                            </div>
+                                        </div>
+
+                                        <div className=" col-span-12  md:col-span-6 ">
+                                            <div className="relative px-1 mt-4 md:mt-4">
+
+                                                <input
+                                                    type="email"
+                                                    id="first_name"
+                                                    className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#6059c9] focus:border-[#6059c9] block w-full p-2.5"
+                                                    placeholder="Your email"
+                                                    required=""
+                                                />
+
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                    <div className="flex items-center py-4 w-full">
+                                        <input
+                                            id="default-checkbox"
+                                            type="checkbox"
+                                            defaultValue=""
+                                            className="w-4 h-4 text-[#6059c9] accent-[#fff]  border-gray-500  rounded focus:ring-[#333]   focus:ring-2 "
+                                        />
+                                        <label
+                                            htmlFor="default-checkbox"
+                                            className="ms-2 w-full text-sm font-medium text-gray-900 "
+                                        >
+                                            Save my name for the next time I comment.
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
                     </div>
 
 
