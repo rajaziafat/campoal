@@ -7,6 +7,7 @@ import About from '../Pages/About'
 import Faq from '../Pages/Faq'
 import SignIn from '../Pages/SignIn'
 import Register from '../Pages/Register'
+import Petition from '../Pages/Petition'
 
 function Routers() {
   return (
@@ -18,6 +19,7 @@ function Routers() {
       <Route path='/faq' element={<Faq />} />
       <Route path='/sign-in' element={<SignIn />} />
       <Route path='/register' element={<Register />} />
+      <Route path='/petition' element={<Petition />} />
     </Routes>
   )
 }

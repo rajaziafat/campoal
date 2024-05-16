@@ -1,0 +1,359 @@
+import { useState } from "react";
+import { BsSend } from "react-icons/bs"
+import { CiSaveDown2 } from "react-icons/ci"
+import { FaArrowDown, FaExternalLinkAlt, FaEye, FaTag } from "react-icons/fa"
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io"
+
+
+const initialCardsToShow = 5;
+const newsData = [
+    {
+        id: 1,
+        title: "‘Dateline NBC’ special ‘The Long Road to Freedom’ to focus on wrongfully convicted Tulsa brothers",
+        website: "oklahoman.com",
+        date: "JUN 19, 2020",
+        content: "The one-hour broadcast, The Long Road to Freedom is part of NBC News’ network-wide series, “Inequality in America.”",
+        agreed: true, // Change to false if not agreed
+    },
+    {
+        id: 2,
+        title: "‘Dateline NBC’ special ‘The Long Road to Freedom’ to focus on wrongfully convicted Tulsa brothers",
+        website: "oklahoman.com",
+        date: "JUN 19, 2020",
+        content: "The one-hour broadcast, The Long Road to Freedom is part of NBC News’ network-wide series, “Inequality in America.”",
+        agreed: true, // Change to false if not agreed
+    },
+    {
+        id: 3,
+        title: "‘Dateline NBC’ special ‘The Long Road to Freedom’ to focus on wrongfully convicted Tulsa brothers",
+        website: "oklahoman.com",
+        date: "JUN 19, 2020",
+        content: "The one-hour broadcast, The Long Road to Freedom is part of NBC News’ network-wide series, “Inequality in America.”",
+        agreed: true, // Change to false if not agreed
+    },
+    {
+        id: 4,
+        title: "‘Dateline NBC’ special ‘The Long Road to Freedom’ to focus on wrongfully convicted Tulsa brothers",
+        website: "oklahoman.com",
+        date: "JUN 19, 2020",
+        content: "The one-hour broadcast, The Long Road to Freedom is part of NBC News’ network-wide series, “Inequality in America.”",
+        agreed: false, // Change to false if not agreed
+    },
+    {
+        id: 5,
+        title: "‘Dateline NBC’ special ‘The Long Road to Freedom’ to focus on wrongfully convicted Tulsa brothers",
+        website: "oklahoman.com",
+        date: "JUN 19, 2020",
+        content: "The one-hour broadcast, The Long Road to Freedom is part of NBC News’ network-wide series, “Inequality in America.”",
+        agreed: false, // Change to false if not agreed
+    },
+    {
+        id: 6,
+        title: "‘Dateline NBC’ special ‘The Long Road to Freedom’ to focus on wrongfully convicted Tulsa brothers",
+        website: "oklahoman.com",
+        date: "JUN 19, 2020",
+        content: "The one-hour broadcast, The Long Road to Freedom is part of NBC News’ network-wide series, “Inequality in America.”",
+        agreed: false, // Change to false if not agreed
+    },
+    // Add more items here
+];
+
+
+
+
+
+function Hero() {
+
+    const [cardsToShow, setCardsToShow] = useState(initialCardsToShow);
+
+    const handleShowMore = () => {
+        setCardsToShow(cardsToShow + 5); // Increase cards to show by 5
+    };
+
+
+
+    return (
+        <div className="bg-white">
+            <div className="py-44 max-w-[1100px] mx-auto px-4 ">
+                <div className="flex justify-center ">
+                    <div className="flex  space-x-2 items-center">
+                        <BsSend className="w-4 h-4 text-gray-500" />
+                        <h2 className="text-[18px] text-gray-500"> Petition to Donald Trump</h2>
+                    </div>
+                </div>
+
+                <h2 className=" text-[28px] md:text-[44px] text-center text-black mt-5 font-bold">Pass the Dignity for Incarcerated Women Act.</h2>
+
+                <div className="mt-5 flex justify-center" >
+                    <div className="flex items-center space-x-2">
+                        <img className="rounded-full w-8" src="/221.jpg" alt="" />
+                        <p className="text-sm">
+                            <b>John Kenedy </b>
+                            ·
+                            San Francisco County, CA, US
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div className="grid grid-cols-12 mt-16">
+                    <div className="col-span-12 lg:col-span-8">
+                        <div className=" border-b  lg:flex justify-between items-center hidden lg:block ">
+                            <ul className="flex text-sm  space-x-2 py-2" >
+                                <li className="px-4 py-1 hover:bg-[#6059c9] cursor-pointer rounded-md  hover:bg-opacity-5 flex items-center ">
+                                    Story
+                                </li>
+                                <li className="px-4 py-1 hover:bg-[#6059c9] cursor-pointer rounded-md hover:bg-opacity-5 flex items-center ">
+                                    Supporters
+                                </li>
+                                <li className="px-4 py-1 hover:bg-[#6059c9] cursor-pointer rounded-md hover:bg-opacity-5 flex items-center ">
+                                    Letter
+                                </li>
+                                <li className="px-4 py-1 hover:bg-[#6059c9] cursor-pointer rounded-md hover:bg-opacity-5 flex items-center ">
+                                    Citations
+                                </li>
+                                <li className="px-4 py-1 hover:bg-[#6059c9] cursor-pointer rounded-md hover:bg-opacity-5 flex items-center ">
+                                    Updates
+                                </li>
+                                <li className="px-4 py-1 hover:bg-[#6059c9] cursor-pointer rounded-md hover:bg-opacity-5 flex items-center ">
+                                    Comments
+                                </li>
+                            </ul>
+
+
+                            <div>
+                                <CiSaveDown2 className="w-6 h-6 cursor-pointer" />
+
+                            </div>
+                        </div>
+
+
+                        <img className="w-full rounded-xl mt-4" src="/0012.jpg" alt="" />
+
+                        <div className="mt-4 flex justify-between">
+                            <div className="flex items-center space-x-2 text-gray-500 ">
+                                <FaTag />
+                                <p> Women</p>
+                            </div>
+
+                            <div className="flex items-center space-x-2 text-gray-500 ">
+                                <FaEye />
+                                <p>510 views</p>
+                            </div>
+
+                        </div>
+
+
+                        <p className='text-[14px] md:text-[18px]  mt-5 leading-7 text-gray-500' >
+                            I was sentenced 78 months to serve at a federal prison for a white-collar crime. I left home a healthy single mother of two sons, not ever experiencing any serious illnesses. I was a registered nurse who had achieved 3 secondary degrees. I was homeowner and a successful business entrepreneur.
+                        </p>
+
+                        <p className='text-[14px] md:text-[18px]  mt-5 leading-7 text-gray-800 font-bold ' >
+                            I was also six weeks pregnant. Anytime I was transported, I was chained at my ankles with another chain around my waist that bound my hands in front of my belly.
+                        </p>
+
+
+                        <p className='text-[14px] md:text-[18px]  mt-5 leading-7 text-gray-800  ' >
+                            While shackled, forced to step up into a van, I fell. A couple days later I begin spotting with streaks of blood, which I reported immediately to the medical staff. They instantly informed me they had “no” means of caring for me and would need approval from the US Marshals to take me to the ER. The turnaround time for approval ended up being 4 weeks. At that point, it was no longer an “emergency,” so I was turned away from the ER — I then required a second approval for an obstetrician, which took 4 more weeks. <b>A total of four requests were made, each taking 4 weeks, while I was placed in solitary confinement for “medical observation</b>.
+                        </p>
+
+
+                        <p className='text-[14px] md:text-[18px]  mt-5 leading-7 text-gray-800  ' >
+                            I ended up miscarrying at approximately 20 weeks without any formal or proper prenatal care. While I was miscarrying, I lay wet in a pool of blood, curled up from excruciating pain, in complete darkness, locked in a cell until an officer made rounds. I suffered the entire miscarriage shackled to the bed. <b>When asked, the officers told the nurse and myself that the linen which contained my unborn child had been thrown in the trash.</b>
+                        </p>
+
+                        <p className='text-[14px] md:text-[18px]  mt-5 leading-7 text-gray-800  ' >
+                            I had no privacy. Male officers were at my bedside 24hrs observing my nakedness and any treatment given to me. I received no counseling, nor had any opportunity to grieve my miscarriage. I was relocated to another facility where again, I was placed in solitary confinement for a month. Solitary is being locked in a 6’ by 9’ room with a bed, toilet, sink, and no window for 23 hours a day. <b>For women in prison, stories like mine are a lot more common than you would think.</b>
+                        </p>
+
+                        <p className='text-[14px] md:text-[18px]  mt-5 leading-7 text-gray-800  ' >
+                            Women are the largest growing prison population. Our federal and private prisons are not equipped to give women the medical care they need, especially when pregnant. We need to ban the shackling and solitary confinement of pregnant women in prison. The Dignity for Incarcerated Women Act, a bill currently being considered in Congress, would stop those things.
+                        </p>
+
+                        <p className='text-[14px] md:text-[18px]  mt-5 leading-7 text-gray-800  ' >
+                            The Dignity for Incarcerated Women Act, will help mothers keep strong relationships with their children by providing parenting classes, prohibit charging for phone calls, and make video-conferencing available free of charge. It will even create an overnight visit pilot program for children and parents. <b>Please sign my petition asking Congress to pass the Dignity for Incarcerated Women Act.</b>
+                        </p>
+
+
+                        <p className='text-[14px] md:text-[18px]  mt-5 leading-7 text-gray-800   ' >
+                            Thank you , Pamela Winn
+                        </p>
+
+                        <p className="mt-5 text-sm">
+                            Report Issue
+                        </p>
+
+
+                        <div className="flex justify-between items-center">
+                            <div className="flex items-center space-x-2 mt-4">
+                                <div className="flex space-x-2 items-center">
+                                    <h2 className="text-[12px] px-2 py-1 rounded-md bg-[#ebe6df] text-gray-500"> Peace</h2>
+                                </div>
+                                <div className="flex space-x-2 items-center">
+                                    <h2 className="text-[12px] px-2 py-1 rounded-md bg-[#ebe6df] text-gray-500"> Women</h2>
+                                </div>
+                            </div>
+
+                            <p className="text-sm mt-6 font-bold">December 6, 2017</p>
+                        </div>
+
+                        <div className="mt-10">
+                            <div className="border-b ">
+                                <h2 className="mb-4 font-bold" >103,709 Supporters</h2>
+                            </div>
+
+                            <div className="mt-4 flex items-center space-x-2">
+                                <img className="rounded-full  w-8" src="/366.webp" alt="" />
+                                <div>
+                                    <h3 className="text-[16px] font-bold">Anonymous</h3>
+                                    <p className="text-[14px] mt-1">From Bei Jing Shi, signed this petition 11 months ago</p>
+                                </div>
+                            </div>
+                            <div className="mt-4 flex items-center space-x-2">
+                                <img className="rounded-full  w-8" src="/366.webp" alt="" />
+                                <div>
+                                    <h3 className="text-[16px] font-bold">Anonymous</h3>
+                                    <p className="text-[14px] mt-1">From Bei Jing Shi, signed this petition 11 months ago</p>
+                                </div>
+                            </div>
+                            <div className="mt-4 flex items-center space-x-2">
+                                <img className="rounded-full  w-8" src="/366.webp" alt="" />
+                                <div>
+                                    <h3 className="text-[16px] font-bold">Anonymous</h3>
+                                    <p className="text-[14px] mt-1">From Bei Jing Shi, signed this petition 11 months ago</p>
+                                </div>
+                            </div>
+                            <div className="mt-4 flex items-center space-x-2">
+                                <img className="rounded-full  w-8" src="/366.webp" alt="" />
+                                <div>
+                                    <h3 className="text-[16px] font-bold">Anonymous</h3>
+                                    <p className="text-[14px] mt-1">From Bei Jing Shi, signed this petition 11 months ago</p>
+                                </div>
+                            </div>
+
+                            <p className="text-sm text-gray-500 mt-4">see more...</p>
+
+                        </div>
+
+
+                        <div className="mt-6">
+                            <div className="border-b ">
+                                <h2 className="mb-2 font-bold" >3 Backers</h2>
+                            </div>
+
+                            <div className="mt-4 flex items-center space-x-2">
+                                <img className="rounded-full  w-8" src="/366.webp" alt="" />
+                                <div>
+                                    <h3 className="text-[16px] font-bold">Anonymous</h3>
+                                    <p className="text-[14px] mt-1">From Bei Jing Shi, signed this petition 11 months ago</p>
+                                </div>
+                            </div>
+                            <div className="mt-4 flex items-center space-x-2">
+                                <img className="rounded-full  w-8" src="/366.webp" alt="" />
+                                <div>
+                                    <h3 className="text-[16px] font-bold">Anonymous</h3>
+                                    <p className="text-[14px] mt-1">From Bei Jing Shi, signed this petition 11 months ago</p>
+                                </div>
+                            </div>
+                            <div className="mt-4 flex items-center space-x-2">
+                                <img className="rounded-full  w-8" src="/366.webp" alt="" />
+                                <div>
+                                    <h3 className="text-[16px] font-bold">Anonymous</h3>
+                                    <p className="text-[14px] mt-1">From Bei Jing Shi, signed this petition 11 months ago</p>
+                                </div>
+                            </div>
+                            <div className="mt-4 flex items-center space-x-2">
+                                <img className="rounded-full  w-8" src="/366.webp" alt="" />
+                                <div>
+                                    <h3 className="text-[16px] font-bold">Anonymous</h3>
+                                    <p className="text-[14px] mt-1">From Bei Jing Shi, signed this petition 11 months ago</p>
+                                </div>
+                            </div>
+
+                            <p className="text-sm text-gray-500 mt-4">see more...</p>
+
+                        </div>
+
+                        <div className="mt-10 bg-[#F9F9FF] px-4 py-6 text-gray-500 rounded-xl">
+                            <div className="">
+                                <h3 className="text-[16px]"> LETTER TO</h3>
+                                <p className="mt-4 text-sm font-bold">Us. Senate</p>
+                                <p className="mt-1 text-sm font-bold" >U.S. House of Representatives</p>
+
+                                <p className="mt-10 text-sm">Pass the Dignity for Incarcerated Women Act.</p>
+                            </div>
+                        </div>
+
+                        <div className="mt-12">
+                            <h2 className="mb-4 text-[24px] font-bold" >Citations</h2>
+                        </div>
+
+                        <div className="w-full rounded-full mt-2 h-1.5 bg-[#d3ccc1] relative overflow-hidden">
+                            <div className="bg-[#36B37E] h-1.5 rounded-full absolute left-0 top-0" style={{ width: `70%` }}>
+                                <div className="shine" style={{ width: "100%" }}></div>
+                            </div>
+                        </div>
+                        <p className="text-[12px] font-bold text-gray-500 mt-2">Fact score: 73%</p>
+
+
+
+                        {newsData.slice(0, cardsToShow).map((item) => (
+                            <div key={item.id} className="mt-10 bg-[#F9F9FF] px-4 py-6 text-gray-500 rounded-xl">
+                                <div className="flex space-x-3">
+                                    <img className="w-28 rounded-xl hidden md:flex" src="/0045.svg" alt="" />
+                                    <div>
+                                        <div className="flex items-center">
+                                            <h2 className="text-[16px] font-bold leading-5">
+                                                <span className={`text-[10px] px-1 py-1 text-white rounded-md ${item.agreed ? 'bg-[#36B37E]' : 'bg-[#EF4444]'}`}>
+                                                    {item.agreed ? 'Agree' : 'Disagree'}
+                                                </span>
+                                                {item.title}
+                                            </h2>
+                                        </div>
+                                        <div className="flex mt-2 items-center space-x-1">
+                                            <p className="text-[14px]">{item.website}</p>
+                                            <FaExternalLinkAlt className="w-3 h-3" />
+                                        </div>
+                                        <h2 className="text-[14px] mt-5 leading-5">{item.content}</h2>
+                                    </div>
+                                    <div className="bg-[#fff3e4] rounded-lg h-[70px] py-1 px-2">
+                                        <IoIosArrowUp className="w-2" />
+                                        <p className="py-2 text-[12px]">3</p>
+                                        <IoIosArrowDown className="w-2" />
+                                    </div>
+                                </div>
+                                <hr className="mt-8" />
+                                <p className="text-end text-sm mt-4">Posted by John Kenedy 4 years ago</p>
+                            </div>
+                        ))}
+
+
+                        {newsData.length > cardsToShow && ( // Show "Show More" button if there are more cards to show
+                            <button
+                                className="w-full px-2 py-3 flex items-center text-sm justify-center border space-x-1 hover:border-black duration-200 ease-in-out border-gray-300 mt-8 rounded-md"
+                                onClick={handleShowMore}
+                            >
+                                <FaArrowDown />
+                                <p>More Citations</p>
+                            </button>
+                        )}
+
+
+                        <div className="border-b mt-10">
+                            <h2 className="mb-2 text-[22px] font-bold" >Updates</h2>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default Hero
