@@ -631,7 +631,7 @@ function Hero() {
                                 <button className='bg-[#6059c9]  text-white text-[15px] justify-center w-full flex items-center space-x-2 font-bold px-6 py-3 rounded-xl'>
                                     <FaLock />
 
-                                    <p>Lock  </p>
+                                    <p>Sign  </p>
                                 </button>
                             </div>
 
@@ -674,7 +674,7 @@ function Hero() {
                                             htmlFor="default-checkbox"
                                             className="ms-2 text-sm font-medium text-gray-900 "
                                         >
-                                           Display my name on this petition
+                                            Display my name on this petition
                                         </label>
                                     </div>
 
@@ -695,7 +695,7 @@ function Hero() {
 
                                     <p className="text-sm text-gray-500">
 
-                                    By signing, you accept Campoal’s Terms of Service and Privacy Policy, and agree to receive occasional emails about campaigns on Campoal. You can unsubscribe at any time.
+                                        By signing, you accept Campoal’s Terms of Service and Privacy Policy, and agree to receive occasional emails about campaigns on Campoal. You can unsubscribe at any time.
 
                                     </p>
 
