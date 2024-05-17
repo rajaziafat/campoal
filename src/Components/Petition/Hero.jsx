@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { AiFillLike } from "react-icons/ai";
+import { AiFillDislike, AiFillLike } from "react-icons/ai";
 import { BiSolidShare } from "react-icons/bi";
 import { BsSend } from "react-icons/bs"
 import { CiSaveDown2 } from "react-icons/ci"
-import { FaArrowDown, FaChevronLeft, FaChevronRight, FaExternalLinkAlt, FaEye, FaTag, FaUser } from "react-icons/fa"
+import { FaArrowDown, FaChevronLeft, FaChevronRight, FaExternalLinkAlt, FaEye, FaFacebookSquare, FaLock, FaTag, FaUser } from "react-icons/fa"
 import { FaUserLarge } from "react-icons/fa6";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io"
+import { IoLocationSharp, IoMailSharp } from "react-icons/io5";
 
 
 const initialCardsToShow = 5;
@@ -77,7 +78,7 @@ function Hero() {
 
     return (
         <div className="bg-white">
-            <div className="py-44 max-w-[1100px] mx-auto px-4 ">
+            <div className="py-44 max-w-[1180px] mx-auto px-4 ">
                 <div className="flex justify-center ">
                     <div className="flex  space-x-2 items-center">
                         <BsSend className="w-4 h-4 text-gray-500" />
@@ -100,9 +101,9 @@ function Hero() {
                 </div>
 
 
-                <div className="grid grid-cols-12 mt-16 gap-4">
-                    <div className="col-span-12 lg:col-span-8 px-2">
-                        <div className="  sticky top-10 bg-white border-b  lg:flex justify-between items-center hidden lg:block ">
+                <div className="grid grid-cols-12 mt-16 ">
+                    <div className="col-span-12 lg:col-span-7 px-6">
+                        <div className="  sticky top-10 bg-white border-b z-50 lg:flex justify-between items-center hidden lg:block ">
                             <ul className="flex text-sm  space-x-2 py-2" >
                                 <li className="px-4 py-1 hover:bg-[#6059c9] cursor-pointer rounded-md  hover:bg-opacity-5 flex items-center ">
                                     Story
@@ -477,19 +478,19 @@ function Hero() {
                         </div>
 
 
-                        <div className="border flex items-center space-x-4 rounded-xl px-4 py-4 mt-10">
-                            <div className="flex space-x-3 items-center h-44 ">
+                        <div className="border flex justify-between items-center space-x-2 rounded-xl px-4 py-4 mt-10">
+                            <div className="flex  space-x-2 items-center h-40 ">
                                 <FaChevronLeft className="w-8 h-8" />
                                 <div>
                                     <h3 className="text-end text-sm">Previous</h3>
-                                    <p className="text-[21px] font-bold">Ask Congress to Outlaw Dog and Cat Meat in the U.S.</p>
+                                    <p className="text-[18px] font-bold text-end">Ask Congress to Outlaw Dog and Cat Meat in the U.S.</p>
                                 </div>
                             </div>
                             <div className="h-44 border-l border-gray-500 mx-4"></div>
-                            <div className="flex space-x-3 items-center  h-44 ">
+                            <div className="flex  space-x-3 items-center  h-40 ">
                                 <div className="mt-6">
                                     <h3 className="text-start text-sm">Next</h3>
-                                    <p className="text-[21px] font-bold ">Tell Walmart Brazil to Stop Selling Eggs from  <br />Confined Hens</p>
+                                    <p className="text-[18px] font-bold ">Tell Walmart Brazil to Stop Selling Eggs from  <br />Confined Hens</p>
                                 </div>
                                 <FaChevronRight className="w-8 h-8" />
                             </div>
@@ -502,16 +503,204 @@ function Hero() {
                     </div>
 
 
-                    <div className="col-start-12 md:col-span-4 px-2">
-                        <div className="flex space-x-2">
-                            <FaUser className="w-8 h-8" />
-
-                            <p className="text-[27px] font-bold">103,709 Supporters</p>
-                        </div>
+                    <div className="col-span-12 md:col-span-5 px-4  ">
 
 
-                        <div>
-                            
+
+                        <div className="grid grid-cols-12 mt-5 gap-4 sticky top-12">
+
+                            <div className="col-span-12">
+
+                                <div className="flex space-x-2">
+                                    <FaUser className="w-6 h-6" />
+
+                                    <p className="text-[27px] font-bold">103,709 Supporters</p>
+                                </div>
+
+
+                                <div className="w-full rounded-full mt-2 h-3 bg-[#d3ccc1] relative overflow-hidden">
+                                    <div className="bg-[#6059c9] h-3 rounded-full absolute left-0 top-0" style={{ width: `60%` }}>
+                                        <div className="shine" style={{ width: "100%" }}></div>
+                                    </div>
+                                </div>
+                                <p className="text-[12px] font-bold text-gray-500 text-center mt-2">96,291 needed to reach 200,000</p>
+                                <hr className="mt-4 mb-4" />
+                            </div>
+
+                            <div className="col-span-12 md:col-span-6">
+                                <input
+                                    type="text"
+                                    id="first_name"
+                                    className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#6059c9] focus:border-[#6059c9] block w-full p-2.5"
+                                    placeholder="First name"
+                                    required=""
+                                />
+                            </div>
+
+                            <div className="col-span-12 md:col-span-6">
+                                <div className="relative">
+                                    <input
+                                        type="text"
+                                        id="first_name"
+                                        className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#6059c9] focus:border-[#6059c9] block w-full p-2.5"
+                                        placeholder="Last name"
+                                        required=""
+                                    />
+                                    <div className="absolute inset-y-0 right-0 flex  text-gray-500 items-center pr-3 pointer-events-none">
+                                        <FaUserLarge />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-span-12 ">
+                                <div className="relative">
+                                    <input
+                                        type="email"
+                                        id="first_name"
+                                        className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#6059c9] focus:border-[#6059c9] block w-full p-2.5"
+                                        placeholder="Email"
+                                        required=""
+                                    />
+                                    <div className="absolute inset-y-0 right-0 flex  text-gray-500 items-center pr-3 pointer-events-none">
+                                        <IoMailSharp />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-span-12 ">
+                                <div className="relative">
+                                    <input
+                                        type="email"
+                                        id="first_name"
+                                        className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#6059c9] focus:border-[#6059c9] block w-full p-2.5"
+                                        placeholder="Address"
+                                        required=""
+                                    />
+                                    <div className="absolute inset-y-0 right-0 flex  text-gray-500 items-center pr-3 pointer-events-none">
+                                        <IoLocationSharp />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-span-12 ">
+                                <div className="relative">
+                                    <input
+                                        type="number"
+                                        id="first_name"
+                                        className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#6059c9] focus:border-[#6059c9] block w-full p-2.5"
+                                        placeholder="phone"
+                                        required=""
+                                    />
+                                    <div className="absolute inset-y-0 right-0 flex  text-gray-500 items-center pr-3 pointer-events-none">
+                                        <IoLocationSharp />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-span-12">
+                                <textarea id="message" rows="4" className="block p-2.5 w-full text-md text-gray-900  rounded-lg border    focus:ring-none focus:border-[#6059c9] placeholder-gray-600" placeholder="I am Singing Because "></textarea>
+                            </div>
+
+                            <div className="col-span-12">
+                                <div className="bg-[#F9F9FF] px-2 py-2 rounded-2xl">
+                                    <label className="inline-flex items-center cursor-pointer">
+                                        <input type="checkbox" defaultValue="" className="sr-only peer" />
+                                        <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[#6059c9] rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#6059c9]" />
+                                        <span className="ms-3 flex space-x-2 items-center text-sm  text-gray-900">
+                                            <FaFacebookSquare />
+
+                                            <p>
+                                                Share on Facebook
+                                            </p>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div className="col-span-12 md:col-span-6">
+                                <button className='bg-[#36B37E]  text-white text-[15px] justify-center w-full flex items-center space-x-4 font-bold px-6 py-3 rounded-xl'>
+                                    <AiFillLike />
+
+                                    <p>Agree </p>
+                                </button>
+                            </div>
+                            <div className="col-span-12 md:col-span-6">
+                                <button className='bg-[#F9F9FF] text-gray-600 hover:bg-[#FF5630] hover:text-[#fff] duration-150 ease-in-out text-[15px] justify-center w-full flex items-center space-x-4 font-bold px-6 py-3 rounded-xl'>
+                                    <AiFillDislike />
+
+                                    <p>Disagree </p>
+                                </button>
+                            </div>
+
+                            <div className="col-span-12">
+                                <button className='bg-[#6059c9]  text-white text-[15px] justify-center w-full flex items-center space-x-2 font-bold px-6 py-3 rounded-xl'>
+                                    <FaLock />
+
+                                    <p>Lock  </p>
+                                </button>
+                            </div>
+
+                            <div className="col-span-12">
+                                <div className="w-full rounded-full  h-1.5 bg-[#d3ccc1] relative overflow-hidden">
+                                    <div className="bg-[#36B37E] h-1.5 rounded-full absolute left-0 top-0" style={{ width: `70%` }}>
+                                        <div className="shine" style={{ width: "100%" }}></div>
+                                    </div>
+                                </div>
+                                <p className="text-[12px] font-bold text-gray-500 mt-2">Fact score: 73%</p>
+
+                            </div>
+                            <div className="col-span-12">
+
+                                <div className="mt-5 px-2" >
+
+                                    <div className="flex items-center mb-2">
+                                        <input
+                                            id="default-checkbox"
+                                            type="checkbox"
+                                            defaultValue=""
+                                            className="w-4 h-4 text-[#6059c9] accent-[#fff]  border-gray-500  rounded focus:ring-[#333]   focus:ring-2 "
+                                        />
+                                        <label
+                                            htmlFor="default-checkbox"
+                                            className="ms-2 text-sm font-medium text-gray-900 "
+                                        >
+                                            Add citation instant on this petition
+                                        </label>
+                                    </div>
+
+                                    <div className="flex items-center mb-2">
+                                        <input
+                                            id="default-checkbox"
+                                            type="checkbox"
+                                            defaultValue=""
+                                            className="w-4 h-4 text-[#6059c9] accent-[#fff]  border-gray-500  rounded focus:ring-[#333]   focus:ring-2 "
+                                        />
+                                        <label
+                                            htmlFor="default-checkbox"
+                                            className="ms-2 text-sm font-medium text-gray-900 "
+                                        >
+                                           Display my name on this petition
+                                        </label>
+                                    </div>
+
+                                    <div className="flex items-center mb-2">
+                                        <input
+                                            id="default-checkbox"
+                                            type="checkbox"
+                                            defaultValue=""
+                                            className="w-4 h-4 text-[#6059c9] accent-[#fff]  border-gray-500  rounded focus:ring-[#333]   focus:ring-2 "
+                                        />
+                                        <label
+                                            htmlFor="default-checkbox"
+                                            className="ms-2 text-sm font-medium text-gray-900 "
+                                        >
+                                            Receive updates from this petition
+                                        </label>
+                                    </div>
+
+                                    <p className="text-sm text-gray-500">
+
+                                    By signing, you accept Campoal’s Terms of Service and Privacy Policy, and agree to receive occasional emails about campaigns on Campoal. You can unsubscribe at any time.
+
+                                    </p>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
 
