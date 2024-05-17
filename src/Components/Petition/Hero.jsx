@@ -3,7 +3,7 @@ import { AiFillLike } from "react-icons/ai";
 import { BiSolidShare } from "react-icons/bi";
 import { BsSend } from "react-icons/bs"
 import { CiSaveDown2 } from "react-icons/ci"
-import { FaArrowDown, FaExternalLinkAlt, FaEye, FaTag } from "react-icons/fa"
+import { FaArrowDown, FaChevronLeft, FaChevronRight, FaExternalLinkAlt, FaEye, FaTag, FaUser } from "react-icons/fa"
 import { FaUserLarge } from "react-icons/fa6";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io"
 
@@ -100,8 +100,8 @@ function Hero() {
                 </div>
 
 
-                <div className="grid grid-cols-12 mt-16">
-                    <div className="col-span-12 lg:col-span-8">
+                <div className="grid grid-cols-12 mt-16 gap-4">
+                    <div className="col-span-12 lg:col-span-8 px-2">
                         <div className="  sticky top-10 bg-white border-b  lg:flex justify-between items-center hidden lg:block ">
                             <ul className="flex text-sm  space-x-2 py-2" >
                                 <li className="px-4 py-1 hover:bg-[#6059c9] cursor-pointer rounded-md  hover:bg-opacity-5 flex items-center ">
@@ -477,11 +477,43 @@ function Hero() {
                         </div>
 
 
+                        <div className="border flex items-center space-x-4 rounded-xl px-4 py-4 mt-10">
+                            <div className="flex space-x-3 items-center h-44 ">
+                                <FaChevronLeft className="w-8 h-8" />
+                                <div>
+                                    <h3 className="text-end text-sm">Previous</h3>
+                                    <p className="text-[21px] font-bold">Ask Congress to Outlaw Dog and Cat Meat in the U.S.</p>
+                                </div>
+                            </div>
+                            <div className="h-44 border-l border-gray-500 mx-4"></div>
+                            <div className="flex space-x-3 items-center  h-44 ">
+                                <div className="mt-6">
+                                    <h3 className="text-start text-sm">Next</h3>
+                                    <p className="text-[21px] font-bold ">Tell Walmart Brazil to Stop Selling Eggs from  <br />Confined Hens</p>
+                                </div>
+                                <FaChevronRight className="w-8 h-8" />
+                            </div>
+                        </div>
+
+
 
 
 
                     </div>
 
+
+                    <div className="col-start-12 md:col-span-4 px-2">
+                        <div className="flex space-x-2">
+                            <FaUser className="w-8 h-8" />
+
+                            <p className="text-[27px] font-bold">103,709 Supporters</p>
+                        </div>
+
+
+                        <div>
+                            
+                        </div>
+                    </div>
 
 
 
