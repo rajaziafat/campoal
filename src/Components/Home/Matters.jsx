@@ -77,7 +77,7 @@ function Matters() {
             <div className='grid grid-cols-12 mt-24 gap-6'>
                 {petitionsData.map(petition => (
                     <div key={petition.id} className='col-span-12 md:col-span-12 lg:col-span-4'>
-                        <div className=" bg-white border border-gray-200 rounded-lg shadow">
+                        <div className=" bg-white border border-gray-200 rounded-lg shadow hover:transform hover:-translate-y-1 hover:transition-transform">
                             <a href="#" className="relative block group">
                                 <img className="rounded-t-lg w-full" src={petition.image} alt="" />
                                 <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-60 transition-opacity rounded-t-lg"></div>

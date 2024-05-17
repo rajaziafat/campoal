@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FaAngleUp, FaAngleDown, FaUser, FaClock } from 'react-icons/fa';
+import { FaAngleUp, FaAngleDown, FaClock } from 'react-icons/fa';
 
 function Hero() {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -23,8 +23,8 @@ function Hero() {
     };
 
     return (
-        <div className="relative w-full">
-            <div className="relative h-[700px] overflow-hidden">
+        <div className="relative w-full hidden md:block">
+            <div className="relative h-[650px] overflow-hidden">
                 <div className="absolute inset-0 flex flex-col transition-transform duration-500" style={{ transform: `translateY(-${currentSlide * 100}%)` }}>
                     {slides.map((slide, index) => (
                         <div key={index} className="w-full h-full flex-shrink-0 relative">
@@ -33,7 +33,7 @@ function Hero() {
                                 className="absolute object-cover h-full w-full top-0 left-0"
                                 alt={`Slide ${index + 1}`}
                             />
-                            <div className="absolute top-1/2 right-72 transform -translate-y-1/2 p-4  bg-white px-8 py-8 rounded-xl max-w-[680px]" >
+                            <div className="absolute top-1/2 right-80 transform -translate-y-1/2 p-4  bg-white px-12 py-12 rounded-xl max-w-[680px]" >
                                 <div className='flex space-x-2'>
                                     <button className="text-white bg-[#6059c9] px-2 py-1.5 rounded-lg flex items-center space-x-1">
 
@@ -51,11 +51,11 @@ function Hero() {
 
                                 </div>
 
-                                <h3 className='text-[28px]  text-[#2b2b39] pt-6 font-[700] text-start'>Vancouver Ulara Nakagawa inspires petition to save elephant in Japan</h3>
+                                <h3 className='text-[28px]  text-[#2b2b39] pt-6 font-[700] text-start'>Want your governor to take action <br /> on climate? This toolkit is for you.</h3>
                                 <p className='mt-4 text-gray-600 leading-6'>
                                     A Vancouver woman s impassioned blog post about an elderly elephant living in a Japanese zoo has inspired an online petitionthat has garnered more than 380,000 signature urging better care for ... </p>
 
-                                <p className='mt-4 text-gray-600 text-sm leading-6'>
+                                <p className='mt-6 text-gray-600 text-sm leading-6'>
 
                                     Written by john kenedy
                                     — June 25, 2017 — 2 comments  </p>
@@ -68,16 +68,16 @@ function Hero() {
                     className="absolute bottom-16 right-4 z-30 flex items-center justify-center h-10 w-10 rounded-full  cursor-pointer group focus:outline-none"
                     onClick={prevSlide}
                 >
-                    <FaAngleUp  className="w-8 h-8 text-white" />
+                    <FaAngleUp className="w-8 h-8 text-gray-500" />
                 </button>
                 <button
                     type="button"
                     className="absolute bottom-4 right-4 z-30 flex items-center justify-center h-10 w-10 rounded-full   cursor-pointer group focus:outline-none"
                     onClick={nextSlide}
                 >
-                    <FaAngleDown  className="w-8 h-8 text-white" />
+                    <FaAngleDown className="w-8 h-8 text-gray-500" />
                 </button>
-            
+
 
             </div>
         </div>

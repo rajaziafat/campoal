@@ -421,7 +421,12 @@ function Hero() {
                                 Search
                             </button>
                         </div>
+                        <div className='flex space-x-2 items-center text-gray-500'>
+                            <FaHome /><FaAngleRight />
+                            <p className='text-sm mt-0.5'>Campaigns</p>
 
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -434,12 +439,7 @@ function Hero() {
 
                         <div className='flex justify-between items-center' >
 
-                            <div className='flex space-x-2 items-center text-gray-500'>
-                                <FaHome /><FaAngleRight />
-                                <p className='text-sm mt-0.5'>Campaigns</p>
 
-
-                            </div>
 
 
 
@@ -552,7 +552,7 @@ function Hero() {
                     <div className='grid grid-cols-12 mt-12 gap-6'>
                         {currentPetitions.map(petition => (
                             <div key={petition.id} className='col-span-12 md:col-span-12 lg:col-span-4'>
-                                <div className=" bg-white border border-gray-200 rounded-lg shadow">
+                                <div className=" bg-white border border-gray-200 rounded-lg shadow hover:transform hover:-translate-y-2 hover:transition-transform">
                                     <a href="#" className="relative block group">
                                         <img className="rounded-t-lg w-full" src={petition.image} alt="" />
                                         <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-60 transition-opacity rounded-t-lg"></div>

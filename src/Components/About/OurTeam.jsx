@@ -57,7 +57,7 @@ function OurTeam() {
                     </div>
 
                     <div className="col-span-12 md:col-span-8">
-                        <div className=" md:flex items-center md:space-x-4">
+                    <div className=" md:flex items-center md:space-x-4">
                             <input
                                 type="search"
                                 id="search"
