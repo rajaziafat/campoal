@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { BsSend } from 'react-icons/bs';
 import { FaCaretDown, FaEye, FaHome, FaUser } from 'react-icons/fa';
 import { FaAngleRight, FaArrowUpRightFromSquare } from 'react-icons/fa6';
@@ -195,52 +195,65 @@ function Hero() {
 
     const topics = [
         { name: '1' },
-
-
+        // Add more topics if needed
     ];
 
-
-
-
-
-
-
-
     const [isOpenT, setIsOpenT] = useState(false);
+    const [isOpenC, setIsOpenC] = useState(false);
+    const [isOpenD, setIsOpenD] = useState(false);
+    const [isOpenA, setIsOpenA] = useState(false);
+
+    const dropdownRefs = {
+        topics: useRef(null),
+        category: useRef(null),
+        date: useRef(null),
+        descending: useRef(null),
+    };
+
+    const closeAllDropdowns = () => {
+        setIsOpenT(false);
+        setIsOpenC(false);
+        setIsOpenD(false);
+        setIsOpenA(false);
+    };
+
+    const handleDocumentClick = (event) => {
+        if (
+            dropdownRefs.topics.current && !dropdownRefs.topics.current.contains(event.target) &&
+            dropdownRefs.category.current && !dropdownRefs.category.current.contains(event.target) &&
+            dropdownRefs.date.current && !dropdownRefs.date.current.contains(event.target) &&
+            dropdownRefs.descending.current && !dropdownRefs.descending.current.contains(event.target)
+        ) {
+            closeAllDropdowns();
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener('click', handleDocumentClick);
+        return () => {
+            document.removeEventListener('click', handleDocumentClick);
+        };
+    }, []);
 
     const toggleDropdownT = () => {
-
-
-
+        closeAllDropdowns();
         setIsOpenT(!isOpenT);
     };
 
-    const [isOpenC, setIsOpenC] = useState(false);
-
     const toggleDropdownC = () => {
-
-
-
+        closeAllDropdowns();
         setIsOpenC(!isOpenC);
     };
-    const [isOpenD, setIsOpenD] = useState(false);
 
     const toggleDropdownD = () => {
-
-
-
+        closeAllDropdowns();
         setIsOpenD(!isOpenD);
     };
 
-    const [isOpenA, setIsOpenA] = useState(false);
-
     const toggleDropdownA = () => {
-
-
-
+        closeAllDropdowns();
         setIsOpenA(!isOpenA);
     };
-
 
     const [currentPage, setCurrentPage] = useState(1);
     const petitionsPerPage = 12;
@@ -253,7 +266,6 @@ function Hero() {
     const indexOfLastPetition = currentPage * petitionsPerPage;
     const indexOfFirstPetition = indexOfLastPetition - petitionsPerPage;
     const currentPetitions = petitionsData.slice(indexOfFirstPetition, indexOfLastPetition);
-
     return (
         <>
             <div className='bg-white pb-20'>
@@ -421,12 +433,7 @@ function Hero() {
                                 Search
                             </button>
                         </div>
-                        <div className='flex space-x-2 items-center text-gray-500'>
-                            <FaHome /><FaAngleRight />
-                            <p className='text-sm mt-0.5'>Campaigns</p>
 
-
-                        </div>
                     </div>
                 </div>
             </div>
@@ -439,7 +446,12 @@ function Hero() {
 
                         <div className='flex justify-between items-center' >
 
+                            <div className='flex space-x-2 items-center text-gray-500'>
+                                <FaHome /><FaAngleRight />
+                                <p className='text-sm mt-0.5'>Campaigns</p>
 
+
+                            </div>
 
 
 
@@ -451,7 +463,7 @@ function Hero() {
                                             data-dropdown-toggle="dropdown"
                                             className="flex items-center justify-between  text-[12px]  px-2 py-2 space-x-4 text-[#5f5f75] hover:bg-opacity-10 hover:bg-[#6059c9] rounded-xl focus:ring-[#6059c9] focus:border-[#6059c9]"
                                             type="button"
-                                            onClick={toggleDropdownD}
+                                          
                                         >
 
 
@@ -464,7 +476,7 @@ function Hero() {
                                         {/* Dropdown menu */}
                                         <div
                                             id="dropdown"
-                                            className={`absolute top-full left-0 mt-2 rounded-md z-10 ${isOpenD ? 'slide-down block' : 'slide-up hidden'} bg-white border divide-y rounded-xl shadow-sm w-full `}
+                                            className={`absolute top-full left-0 mt-2 rounded-md z-10 bg-white border divide-y slide-down rounded-xl shadow-sm w-full dropdown-content `}
                                         >
 
 
@@ -502,7 +514,7 @@ function Hero() {
                                             data-dropdown-toggle="dropdown"
                                             className="flex items-center justify-between  text-[12px]  px-2 py-2 space-x-4 text-[#5f5f75] hover:bg-opacity-10 hover:bg-[#6059c9] rounded-xl focus:ring-[#6059c9] focus:border-[#6059c9]"
                                             type="button"
-                                            onClick={toggleDropdownA}
+                                           
                                         >
 
 
@@ -515,7 +527,7 @@ function Hero() {
                                         {/* Dropdown menu */}
                                         <div
                                             id="dropdown"
-                                            className={`absolute top-full left-0 mt-2 rounded-md z-10 ${isOpenA ? 'slide-down block' : 'slide-up hidden'} bg-white border divide-y rounded-xl shadow-sm w-full `}
+                                            className={`absolute top-full left-0 mt-2 rounded-md z-10 bg-white border divide-y slide-down rounded-xl shadow-sm w-full dropdown-content `}
                                         >
 
 

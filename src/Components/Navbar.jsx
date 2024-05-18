@@ -11,14 +11,14 @@ const navigation = [
     { name: 'Compaings', to: '/campaigns', current: true },
     { name: 'Fundraising', to: '#', current: false },
     { name: 'Mambership', to: '#', current: false },
-    { name: 'Blog', to: '#', current: false },
+    { name: 'Blog', to: '/blog', current: false },
 ];
 
 const navigationsm = [
-    { name: 'Compaings', to: 'campaigns', current: true },
+    { name: 'Compaings', to: '/campaigns', current: true },
     { name: 'Fundraising', to: '#', current: false },
     { name: 'Mambership', to: '#', current: false },
-    { name: 'Blog', to: '#', current: false },
+    { name: 'Blog', to: '/blog', current: false },
     { name: 'Shop', to: '#', current: false },
     { name: 'Support Desk', to: '#', current: false },
 ];
@@ -55,7 +55,8 @@ function classNames(...classes) {
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
-    const [isOpenL, setIsOpenL] = useState(false);
+    const [isOpenP, setIsOpenP] = useState(false);
+    const [isOpenM, setIsOpenM] = useState(false);
     const menuRef = useRef(null);
 
 
@@ -74,21 +75,39 @@ export default function Navbar() {
 
     useEffect(() => {
         const handleClickOutside = (event) => {
-            if (menuRef.current && !menuRef.current.contains(event.target)) {
+            if (
+                (menuRef.current && !menuRef.current.contains(event.target)) ||
+                (menuRef.current && event.target.closest('[data-dropdown-toggle]') === null)
+            ) {
                 setIsOpen(false);
+                setIsOpenP(false);
+                setIsOpenM(false);
+                setIsOpenC(false);
             }
         };
-
+    
         document.addEventListener('mousedown', handleClickOutside);
-
+    
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
     }, []);
-
-    const toggleDropdownL = () => {
-        setIsOpenL(!isOpenL);
+    
+    const toggleDropdownP = () => {
+        setIsOpenP(!isOpenP);
+        setIsOpenM(false); // Close other dropdown
+        setIsOpenC(false); // Close other dropdown
+        setIsOpen(false); // Close the main menu
     };
+    
+    const toggleDropdownM = () => {
+        setIsOpenM(!isOpenM);
+        setIsOpenP(false); // Close other dropdown
+        setIsOpenC(false); // Close other dropdown
+        setIsOpen(false); // Close the main menu
+    };
+    
+    
 
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
@@ -164,7 +183,7 @@ export default function Navbar() {
                                     data-dropdown-toggle="dropdown"
                                     className="flex items-center space-x-4 px-3 py-2 focus:ring-none focus:outline-none focus:ring-none text-sm    hover:bg-[#6059c9] hover:bg-opacity-5 rounded-xl"
                                     type="button"
-                                    onClick={toggleDropdownL}
+                                    onClick={toggleDropdownP}
                                 >
                                     <p className="text-sm">Pages</p>
                                     <FaCaretDown className='w-3.5 h-3.5' />
@@ -172,7 +191,7 @@ export default function Navbar() {
                                 {/* Dropdown menu */}
                                 <div
                                     ref={menuRef}
-                                    className={`absolute top-full left-0 mt-2 rounded-xl z-10 ${isOpenL ? 'slide-down block' : 'slide-up hidden'} bg-white border divide-y rounded-xl shadow-sm w-24 `}
+                                    className={`absolute top-full left-0 mt-2 rounded-xl z-10 ${isOpenP ? 'slide-down block' : 'slide-up hidden'} bg-white border divide-y rounded-xl shadow-sm w-24 `}
                                 >
                                     <ul
                                         className=" text-sm max-h-[265px] overflow-y-auto text-[#5f5f75]  py-2 rounded-lg "
@@ -195,14 +214,14 @@ export default function Navbar() {
                                     data-dropdown-toggle="dropdown"
                                     className="flex items-center space-x-4 px-3 py-2 focus:ring-none focus:outline-none focus:ring-none text-sm    hover:bg-[#6059c9] hover:bg-opacity-5 rounded-xl"
                                     type="button"
-                                    onClick={toggleDropdownL}
+                                    onClick={toggleDropdownM}
                                 >
                                     <p className="text-sm">More</p>
                                     <FaCaretDown className='w-3.5 h-3.5' />
                                 </button>
                                 {/* Dropdown menu */}
                                 <div
-                                    className={`absolute top-full left-0 mt-2 rounded-xl z-10 ${isOpenL ? 'slide-down block' : 'slide-up hidden'} bg-white border divide-y rounded-xl shadow-sm w-24 `}
+                                    className={`absolute top-full left-0 mt-2 rounded-xl z-10 ${isOpenM ? 'slide-down block' : 'slide-up hidden'} bg-white border divide-y rounded-xl shadow-sm w-24 `}
                                 >
                                     <ul
                                         className=" text-sm max-h-[265px] overflow-y-auto text-[#5f5f75]  py-2 rounded-lg "
@@ -232,7 +251,7 @@ export default function Navbar() {
                                         <p>Signup</p>
                                     </button>
                                 </div>
-                                <div className='bg-white absolute left-[70px] rounded-full p-1.5 text-[#6059c9]'>or</div>
+                                <div className='bg-white absolute left-[70px] text-sm rounded-full px-1.5 py-0.5 text-[#6059c9]'>or</div>
                                 <div>
                                     <button className='bg-[#6059c9]  text-white text-[15px] flex items-center space-x-4 font-bold px-4 py-2.5 rounded-xl rounded-l-none'>
                                         <p>Login</p>
@@ -247,7 +266,7 @@ export default function Navbar() {
                                 <p>Signup</p>
                             </button>
                         </div>
-                        <div className='bg-white absolute left-[70px] rounded-full p-1.5 text-[#6059c9]'>or</div>
+                        <div className='bg-white absolute left-[70px] text-sm rounded-full px-1.5 py-0.5 text-[#6059c9]'>or</div>
                         <div>
                             <button className='bg-[#6059c9]  text-white text-[15px] flex items-center space-x-4 font-bold px-4 py-2.5 rounded-xl rounded-l-none'>
                                 <p>Login</p>
@@ -308,14 +327,14 @@ export default function Navbar() {
                 </div>
                 <div className=" pt-2  space-y-1">
                     {navigationsm.map((item) => (
-                        <a
+                        <Link
                             key={item.name}
-                            href={item.href}
+                            to={item.to}
                             className='text-gray-600 flex items-center justify-between  hover:bg-[#6059c9] hover:bg-opacity-5 px-4 py-4  border-b'
                             aria-current={item.current ? 'page' : undefined}
                         >
                             {item.name}
-                        </a>
+                        </Link>
                     ))}
                 </div>
                 <div className='text-gray-600 flex items-center justify-between  hover:bg-[#6059c9] hover:bg-opacity-5 px-4 py-4  border-b '>

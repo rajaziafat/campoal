@@ -123,3 +123,13 @@
   transition: max-height 600ms ease-in;
 }
 
+
+
+/* Dropdown Menu - Show on Hover */
+.relative:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content {
+  display: none;
+}

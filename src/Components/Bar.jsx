@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FaGlobe } from "react-icons/fa";
 import { MdLocationPin } from "react-icons/md";
 import { FaCaretDown } from "react-icons/fa";
 import { IoBag } from "react-icons/io5";
+import { Link } from 'react-router-dom';
 
 
 
@@ -57,7 +58,7 @@ function Bar() {
         },
         {
             text: "FAQs",
-            link: "#",
+            link: "/faq",
         },
         {
             text: "Contact",
@@ -86,17 +87,35 @@ function Bar() {
 
 
     const [isOpen, setIsOpen] = useState(false);
+    const [isOpenL, setIsOpenL] = useState(false);
 
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
+        setIsOpenL(false); // Close other dropdown
     };
-
-
-    const [isOpenL, setIsOpenL] = useState(false);
-
+    
     const toggleDropdownL = () => {
         setIsOpenL(!isOpenL);
+        setIsOpen(false); // Close other dropdown
     };
+    
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            // Check if the clicked element is outside of any dropdown toggle button
+            if (event.target.closest('[data-dropdown-toggle]') === null) {
+                setIsOpen(false); // Close global dropdown
+                setIsOpenL(false); // Close language dropdown
+            }
+        };
+    
+        document.addEventListener('mousedown', handleClickOutside);
+    
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+    
+    
 
     return (
         <div className="bg-white z-50  sticky top-0 px-4 py-2.5 hidden lg:block">
@@ -253,10 +272,10 @@ function Bar() {
                         <ul className='flex items-center space-x-2'>
                             {menuItems.map((menuItem, index) => (
                                 <li key={index}>
-                                    <a href={menuItem.link} className="px-4 py-1 hover:bg-[#6059c9] hover:bg-opacity-5 flex items-center space-x-2">
+                                    <Link to={menuItem.link} className="px-4 py-1 hover:bg-[#6059c9] hover:bg-opacity-5 flex items-center space-x-2">
                                         {menuItem.icon && menuItem.icon}
                                         <p className="text-[13px] mt-0.5">{menuItem.text}</p>
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>

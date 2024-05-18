@@ -1,5 +1,6 @@
 import { FaFacebookF, FaInstagram, FaLinkedin, FaPhoneAlt, FaTwitter, FaYoutube } from "react-icons/fa"
 import { IoLocationSharp, IoMailSharp } from "react-icons/io5"
+import { Link } from "react-router-dom"
 
 
 function Footer() {
@@ -13,9 +14,9 @@ function Footer() {
             </h2>
             <ul className="text-white font-medium">
               <li className="mb-4">
-                <a href="#" className="hover:underline">
+                <Link to="/about" className="hover:underline">
                   About
-                </a>
+                </Link>
               </li>
               <li className="mb-4">
                 <a href="#" className="hover:underline">
@@ -55,9 +56,9 @@ function Footer() {
                 </a>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">
+                <Link to="/faq" className="hover:underline">
                   FAQs
-                </a>
+                </Link>
               </li>
               <li className="mb-4">
                 <a href="#" className="hover:underline">
@@ -82,9 +83,9 @@ function Footer() {
             </h2>
             <ul className="text-white font-medium">
               <li className="mb-4">
-                <a href="#" className="hover:underline">
+                <Link to="/blog" className="hover:underline">
                   Blog
-                </a>
+                </Link>
               </li>
               <li className="mb-4">
                 <a href="#" className="hover:underline">
