@@ -279,7 +279,7 @@ function Hero() {
                                 <input
                                     type="search"
                                     id="search-dropdown"
-                                    className="block px-2 py-3 w-full z-20 text-[16px] text-gray-900 bg-gray-50 rounded-xl border border-gray-300 focus:ring-[#6059c9] focus:border-[#6059c9]"
+                                    className="block px-2 py-3 w-full z-20 text-[16px] text-gray-900 bg-white rounded-xl border border-gray-300 focus:ring-[#6059c9] focus:border-[#6059c9]"
                                     placeholder="Type some words related to the campaign"
                                     required=""
                                 />
@@ -311,7 +311,7 @@ function Hero() {
                                 <input
                                     type="search"
                                     id="search-dropdown"
-                                    className="block px-2 py-3 w-full z-20 text-[16px] text-gray-900 bg-gray-50 rounded-xl border border-gray-300 focus:ring-[#6059c9] focus:border-[#6059c9]"
+                                    className="block px-2 py-3 w-full z-20 text-[16px] text-gray-900 bg-white rounded-xl border border-gray-300 focus:ring-[#6059c9] focus:border-[#6059c9]"
                                     placeholder="Address. eg, state City "
                                     required=""
                                 />
