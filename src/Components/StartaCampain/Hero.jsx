@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { FaCaretDown, FaCheck } from 'react-icons/fa';
-import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
+import { FaArrowRight, FaCaretDown, FaCheck } from 'react-icons/fa';
+import { MdArrowRight } from 'react-icons/md';
 import { CSSTransition } from 'react-transition-group';
 
 const topics = [
@@ -168,37 +168,62 @@ function Hero() {
 
                                     </div>
 
-                                    <div className='col-span-12 md:col-span-6'>
-                                        <div className="mt-2  max-w-[750px] mx-auto">
+                                    <div className='col-span-12 '>
+                                        <div className="mt-2 w-full">
 
 
 
-                                            <div>
-                                                <div
-                                                    className="flex mt-2 items-center space-x-2 cursor-pointer"
-                                                    onClick={() => toggleAnswer(0)} // Assuming index 0 for the single question
-                                                >
-                                                    <div>
-                                                        {expandedQuestion === 0 ? (
-                                                            <IoIosArrowUp className="w-6 h-6" />
-                                                        ) : (
-                                                            <IoIosArrowDown className="w-6 h-6" />
-                                                        )}
-                                                    </div>
-                                                    <h3 className="text-[20px] md:text-[18px] font-bold"> How to write a great title?</h3>
+
+                                            <div
+                                                className="flex mt-2 items-center space-x-2 cursor-pointer"
+                                                onClick={() => toggleAnswer(0)} // Assuming index 0 for the single question
+                                            >
+                                                <div>
+                                                    {expandedQuestion === 0 ? (
+                                                        <FaCaretDown className="w-6 h-6" />
+                                                    ) : (
+                                                        <MdArrowRight className="w-8 h-8" />
+                                                    )}
                                                 </div>
-
-                                                <CSSTransition
-                                                    in={expandedQuestion === 0}
-                                                    timeout={300}
-                                                    classNames="slide"
-                                                    unmountOnExit
-                                                >
-                                                    <div className="text-[18px] text-black px-6 mt-4 leading-6">
-                                                        Answer
-                                                    </div>
-                                                </CSSTransition>
+                                                <h3 className="text-[20px] md:text-[18px] mt-0.5 font-bold"> How to write a great title?</h3>
                                             </div>
+
+                                            <CSSTransition
+                                                in={expandedQuestion === 0}
+                                                timeout={100}
+                                                classNames="slide"
+                                                unmountOnExit
+                                            >
+                                                <div className="text-[18px] w-full text-black px-6  mt-4 leading-6">
+                                                    <ul className='list-disc'>
+                                                        <li>
+                                                            <p className='text-sm font-bold'>
+                                                                Keep it short and to the point
+                                                            </p>
+                                                            <p className='text-sm whitespace-nowrap'>
+                                                                Example: Buy organic, free-range eggs for your restaurants.
+                                                            </p>
+                                                        </li>
+                                                        <li>
+                                                            <p className='text-sm font-bold'>
+                                                                Focus on the solution
+                                                            </p>
+                                                            <p className='text-sm whitespace-nowrap'>
+                                                                Example: Raise the minimum wage in Minneapolis to $15 an hour.
+                                                            </p>
+                                                        </li>
+                                                        <li>
+                                                            <p className='text-sm font-bold'>
+                                                                Communicate urgency
+                                                            </p>
+                                                            <p className='text-sm whitespace-nowrap'>
+                                                                Example: Approve life-saving medication for my daughter’s insurance before it’s too late.
+                                                            </p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </CSSTransition>
+
                                         </div>
                                     </div>
 
@@ -219,7 +244,183 @@ function Hero() {
                         </>}
                     </div>
                     <div className={`tab-content ${activeTab === 1 ? 'active' : ''}`}>
-                        {activeTab === 1 && <div>Content for Receiver</div>}
+                        {activeTab === 1 && <>
+                            <div className='max-w-[700px] mx-auto mt-10 ' >
+                                <div className='grid grid-cols-12 gap-4'>
+
+                                    <div className='col-span-12'>
+                                        <h2 className='text-[24px] font-bold  text-[#333] mt-4'>Choose a decision maker</h2>
+                                        <p className=' text-[16px]  text-gray-600 mt-2'>This is the person, organization, or group that can make a decision about your petition. We will send them updates on your petition and encourage a response.</p>
+                                      
+                                    </div>
+                                    <div className='col-span-12 md:col-span-6'>
+                                           <div className="relative px-1  w-full">
+                                            <label
+                                                htmlFor="first_name"
+                                                className="block mb-2 flex items-center space-x-1 text-xs font-medium text-gray-900"
+                                            >
+                                                <p> Full name</p>
+                                                <p className="text-red-600">*</p>
+                                            </label>
+                                            <input
+                                                type="text"
+                                                id="first_name"
+                                                className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#6059c9] focus:border-[#6059c9]  w-full p-2.5"
+                                                placeholder="Who can make this happen?"
+                                                required=""
+                                            />
+
+                                        </div>
+                                    </div>
+                                    <div className='col-span-12 md:col-span-6'>
+                                        <div className="relative px-1  w-full">
+                                            <label
+                                                htmlFor="first_name"
+                                                className="block mb-2 flex items-center space-x-1 text-xs font-medium text-gray-900"
+                                            >
+                                                <p> Title or organization</p>
+                                                <p className="text-red-600">*</p>
+                                            </label>
+                                            <input
+                                                type="text"
+                                                id="first_name"
+                                                className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#6059c9] focus:border-[#6059c9]  w-full p-2.5"
+                                                placeholder="What is their position?"
+                                                required=""
+                                            />
+
+                                        </div>
+                                    </div>
+                                    <div className='col-span-12 md:col-span-6'>
+                                        <div className='relative px-1  w-full'>
+                                            <label
+                                                htmlFor="first_name"
+                                                className="block mb-2 flex items-center space-x-1 text-xs font-medium text-gray-900"
+                                            >
+                                                <p> Category</p>
+                                                <p className="text-red-600">*</p>
+                                            </label>
+                                            <button
+                                                id="dropdownDefaultButton"
+                                                data-dropdown-toggle="dropdown"
+                                                className="flex items-center justify-between  text-[16px] w-full px-2 py-2.5 space-x-8 text-[#5f5f75] rounded-lg border border-gray-300 focus:ring-[#6059c9] focus:border-[#6059c9]"
+                                                type="button"
+                                                onClick={toggleDropdownT}
+                                            >
+
+
+                                                <p className="text-[16px] mt-0.5">Children rights</p>
+
+                                                <FaCaretDown className='w-3.5 h-3.5' />
+
+
+                                            </button>
+                                            {/* Dropdown menu */}
+                                            <div
+                                                id="dropdown"
+                                                className={`absolute top-full left-0 mt-2 rounded-md z-10 ${isOpenT ? 'slide-down block' : 'slide-up hidden'} bg-white border divide-y rounded-xl shadow-sm w-full `}
+                                            >
+
+
+
+
+
+
+                                                <ul
+                                                    className=" text-sm max-h-[265px] overflow-y-auto text-[#5f5f75]  py-2 rounded-lg "
+                                                    aria-labelledby="dropdownDefaultButton"
+                                                >
+
+
+
+
+
+                                                    {topics.map((topics, index) => (
+                                                        <li key={index}>
+                                                            <a href="#" className="px-4 py-1 hover:bg-[#6059c9] w-full hover:bg-opacity-5 flex items-center space-x-2">
+
+                                                                <p className="text-[13px] mt-0.5">{topics.name}</p>
+                                                            </a>
+                                                        </li>
+                                                    ))}
+
+                                                </ul>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                    <div className='col-span-12'>
+                                        <div className="mt-2 w-full">
+
+
+
+
+                                            <div
+                                                className="flex mt-2 items-center space-x-2 cursor-pointer"
+                                                onClick={() => toggleAnswer(0)} // Assuming index 0 for the single question
+                                            >
+                                                <div>
+                                                    {expandedQuestion === 0 ? (
+                                                        <FaCaretDown className="w-6 h-6" />
+                                                    ) : (
+                                                        <MdArrowRight className="w-8 h-8" />
+                                                    )}
+                                                </div>
+                                                <h3 className="text-[20px] md:text-[18px] mt-0.5 font-bold"> How to write a great title?</h3>
+                                            </div>
+
+                                            <CSSTransition
+                                                in={expandedQuestion === 0}
+                                                timeout={100}
+                                                classNames="slide"
+                                                unmountOnExit
+                                            >
+                                                <div className="text-[18px] w-full text-black px-6  mt-4 leading-6">
+                                                    <ul className='list-disc'>
+                                                        <li>
+                                                            <p className='text-sm font-bold'>
+                                                                Keep it short and to the point
+                                                            </p>
+                                                            <p className='text-sm whitespace-nowrap'>
+                                                                Example: Buy organic, free-range eggs for your restaurants.
+                                                            </p>
+                                                        </li>
+                                                        <li>
+                                                            <p className='text-sm font-bold'>
+                                                                Focus on the solution
+                                                            </p>
+                                                            <p className='text-sm whitespace-nowrap'>
+                                                                Example: Raise the minimum wage in Minneapolis to $15 an hour.
+                                                            </p>
+                                                        </li>
+                                                        <li>
+                                                            <p className='text-sm font-bold'>
+                                                                Communicate urgency
+                                                            </p>
+                                                            <p className='text-sm whitespace-nowrap'>
+                                                                Example: Approve life-saving medication for my daughter’s insurance before it’s too late.
+                                                            </p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </CSSTransition>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+                        </>}
                     </div>
                     <div className={`tab-content ${activeTab === 2 ? 'active' : ''}`}>
                         {activeTab === 2 && <div>Content for Problem</div>}
@@ -229,30 +430,36 @@ function Hero() {
                     </div>
                 </div>
 
-                <div className='flex justify-between mt-8'>
-                    <button
-                        className={`px-4 py-2 ${activeTab === 0 ? 'bg-gray-300 cursor-not-allowed' : 'bg-blue-500 text-white'}`}
-                        onClick={prevTab}
-                        disabled={activeTab === 0}
-                    >
-                        Back
-                    </button>
+                <div className='max-w-[700px] mx-auto ' >
+                    <div className='flex justify-between mt-20'>
+                        <button
+                            className={`px-4 py-2 ${activeTab === 0 ? 'bg-gray-300 cursor-not-allowed ' : 'bg-blue-500 text-white'}`}
+                            onClick={prevTab}
+                            disabled={activeTab === 0}
+                        >
+                            Back
+                        </button>
 
-                    {activeTab < tabTitles.length - 1 ? (
-                        <button
-                            className='px-4 py-2 bg-blue-500 text-white'
-                            onClick={nextTab}
-                        >
-                            Next
-                        </button>
-                    ) : (
-                        <button
-                            className='px-4 py-2 bg-green-500 text-white'
-                            onClick={() => alert('Campaign Finished')}
-                        >
-                            Finish
-                        </button>
-                    )}
+                        {activeTab < tabTitles.length - 1 ? (
+                            <button
+                                className='px-6 py-2.5 bg-[#6059c9] flex justify-center items-center space-x-2 rounded-lg text-m font-bold text-white'
+                                onClick={nextTab}
+                            >
+                                <p className='mt-0.5'>
+                                    Next
+                                </p>
+                                <FaArrowRight className='w-5 h-5 ' />
+
+                            </button>
+                        ) : (
+                            <button
+                                className='px-4 py-2 bg-green-500 text-white'
+                                onClick={() => alert('Campaign Finished')}
+                            >
+                                Finish
+                            </button>
+                        )}
+                    </div>
                 </div>
             </div>
         </div>
