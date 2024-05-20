@@ -133,3 +133,19 @@
 .dropdown-content {
   display: none;
 }
+
+.tab-content {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.3s, transform 0.3s;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.tab-content.active {
+  opacity: 1;
+  transform: scale(1);
+  position: relative;
+}

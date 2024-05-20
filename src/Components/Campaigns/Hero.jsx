@@ -3,7 +3,7 @@ import { BsSend } from 'react-icons/bs';
 import { FaCaretDown, FaEye, FaHome, FaUser } from 'react-icons/fa';
 import { FaAngleRight, FaArrowUpRightFromSquare } from 'react-icons/fa6';
 import { IoIosChatbubbles } from 'react-icons/io';
-import { MdKeyboardArrowRight, MdLocationOn } from 'react-icons/md'
+import {  MdLocationOn } from 'react-icons/md'
 
 
 const petitionsData = [

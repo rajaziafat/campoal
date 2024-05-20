@@ -9,6 +9,7 @@ import SignIn from '../Pages/SignIn'
 import Register from '../Pages/Register'
 import Petition from '../Pages/Petition'
 import Blog from '../Pages/Blog'
+import StartaCampain from '../Pages/StartaCampain'
 
 function Routers() {
   return (
@@ -22,6 +23,7 @@ function Routers() {
       <Route path='/register' element={<Register />} />
       <Route path='/petition' element={<Petition />} />
       <Route path='/blog' element={<Blog />} />
+      <Route path='/start-a-campaign' element={<StartaCampain />} />
     </Routes>
   )
 }
