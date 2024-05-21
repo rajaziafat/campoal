@@ -72,7 +72,7 @@ function MyAccount() {
 
                                     <CSSTransition
                                         in={expandedQuestion === index}
-                                        timeout={300}
+                                        timeout={600}
                                         classNames="slide"
                                         unmountOnExit
                                     >
