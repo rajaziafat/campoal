@@ -149,3 +149,20 @@
   transform: scale(1);
   position: relative;
 }
+
+
+.custom-quill .ql-container {
+  border-bottom-left-radius: 0.75rem; /* rounded-bl-xl equivalent in TailwindCSS */
+  border-bottom-right-radius: 0.75rem; /* rounded-br-xl equivalent in TailwindCSS */
+}
+
+
+.custom-quill .ql-toolbar {
+    border-top-left-radius: 0.75rem; /* rounded-tl-xl equivalent in TailwindCSS */
+    border-top-right-radius: 0.75rem; /* rounded-tr-xl equivalent in TailwindCSS */
+}
+
+.custom-quill .ql-editor {
+    border-bottom-left-radius: 0.75rem; /* rounded-bl-xl equivalent in TailwindCSS */
+    border-bottom-right-radius: 0.75rem; /* rounded-br-xl equivalent in TailwindCSS */
+}

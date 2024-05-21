@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { FaArrowLeft, FaArrowRight, FaCaretDown, FaCheck, FaPlus, FaTimes } from 'react-icons/fa';
+import { FaArrowLeft, FaArrowRight, FaCaretDown, FaCheck, FaPlus, FaRegFolderOpen, FaTimes } from 'react-icons/fa';
 import { MdArrowRight } from 'react-icons/md';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { CSSTransition } from 'react-transition-group';
 import Select from 'react-select';
+import { IoIosLink } from 'react-icons/io';
+import { BsFillSendFill } from 'react-icons/bs';
 
 const topics = [
     { name: '1' },
@@ -64,32 +66,54 @@ function Hero() {
     const customStyles = {
         control: (provided) => ({
             ...provided,
-            borderColor: '#6059c9',
+            borderColor: '#cccccc',
             '&:hover': { borderColor: '#6059c9' },
         }),
         multiValue: (provided) => ({
             ...provided,
-            backgroundColor: '#6059c9',
+            backgroundColor: '#f5efe0',
         }),
         multiValueLabel: (provided) => ({
             ...provided,
-            color: 'white',
+            color: '#333',
         }),
         multiValueRemove: (provided) => ({
             ...provided,
-            color: 'white',
+            color: '#333',
             ':hover': {
-                backgroundColor: '#6059c9',
+                backgroundColor: 'red',
                 color: 'white',
             },
         }),
     };
 
 
+    const [selectedImage, setSelectedImage] = useState(null);
+    const [imageURL, setImageURL] = useState('');
+
+    const handleImageUpload = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const imageUrl = URL.createObjectURL(file);
+            setSelectedImage(imageUrl);
+        }
+    };
+
+    const handleEmbed = () => {
+        setSelectedImage(imageURL);
+    };
+
+    const handleDeleteImage = () => {
+        setSelectedImage(null);
+        setImageURL('');
+    };
+
+
+
 
     return (
         <div className='pt-32 bg-white'>
-            <div className='max-w-[940px] mx-auto px-4'>
+            <div className='max-w-[940px] mx-auto px-4 pb-12'>
                 <h2 className='text-[32px] font-bold text-center text-[#333] mt-4'>Start a Campaign</h2>
 
                 <div className='flex justify-center mt-10'>
@@ -439,7 +463,7 @@ function Hero() {
                                         </div>
                                     </div>
 
-                                 
+
 
 
                                 </div>
@@ -471,7 +495,7 @@ function Hero() {
                                         <ReactQuill
                                             value={content}
                                             onChange={setContent}
-                                            className="mt-2 h-[300px] rounded-xl"
+                                            className="custom-quill  mt-2 h-[300px] rounded-xl"
                                         />
                                     </div>
                                     <div className='col-span-12 mt-10'>
@@ -494,7 +518,7 @@ function Hero() {
                                                         <MdArrowRight className="w-8 h-8" />
                                                     )}
                                                 </div>
-                                                <h3 className="text-[20px] md:text-[18px] mt-0.5 font-bold">How to find the right decision maker?</h3>
+                                                <h3 className="text-[20px] md:text-[18px] mt-0.5 font-bold"> How to inspire your readers to action?</h3>
                                             </div>
                                             <CSSTransition
                                                 in={expandedQuestion === 0}
@@ -505,16 +529,20 @@ function Hero() {
                                                 <div className="text-[18px] w-full text-black px-6 mt-4 leading-6">
                                                     <ul className='list-disc'>
                                                         <li>
-                                                            <p className='text-sm font-bold'>Choose someone who can give you what you want</p>
-                                                            <p className='text-sm'>You might need to do some research to find the right person who can make or influence the decision.</p>
+                                                            <p className='text-sm font-bold'>Describe the people involved and the problem they are facing</p>
+                                                            <p className='text-sm'>Readers are most likely to take action when they understand who is affected.</p>
                                                         </li>
                                                         <li>
-                                                            <p className='text-sm font-bold'>Do not go straight to the top</p>
-                                                            <p className='text-sm'>You might see faster results if you choose a more junior person who is petitioned less often than more recognizable figures.</p>
+                                                            <p className='text-sm font-bold'>Describe the solution</p>
+                                                            <p className='text-sm'>Explain what needs to happen and who can make the change. Make it clear what happens if you win or lose.</p>
                                                         </li>
                                                         <li>
-                                                            <p className='text-sm font-bold'>Choose someone you can work with</p>
-                                                            <p className='text-sm'>Your petition is most likely to win by reaching an agreement with your decision maker.</p>
+                                                            <p className='text-sm font-bold'>Make it personal</p>
+                                                            <p className='text-sm'>Readers are more likely to sign and support your petition if it’s clear why you care.</p>
+                                                        </li>
+                                                        <li>
+                                                            <p className='text-sm font-bold'>Respect others</p>
+                                                            <p className='text-sm'>Don’t bully, use hate speech, threaten violence or make things up.</p>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -530,7 +558,151 @@ function Hero() {
                         </>}
                     </div>
                     <div className={`tab-content ${activeTab === 3 ? 'active' : ''}`}>
-                        {activeTab === 3 && <div>Content for Photo</div>}
+                        {activeTab === 3 && <>
+                            <div className='max-w-[700px] mx-auto mt-10 ' >
+                                <div className='grid grid-cols-12 gap-4'>
+
+                                    <div className='col-span-12'>
+                                        <h2 className='text-[24px] font-bold  text-[#333] mt-4'>Add a photo or video</h2>
+                                        <p className=' text-[16px]  text-gray-600 mt-2'>Petitions with a photo or video receive six times more signatures than those without. Include one that captures the emotion of your story.</p>
+
+
+
+                                        <div className='mt-10 border-2 border-dashed flex items-center justify-center border-gray-400 h-[420px] rounded-lg'>
+                                            {selectedImage ? (
+                                                <div className='relative w-full h-full'>
+                                                    <img src={selectedImage} alt="Selected" className='object-cover w-full h-full rounded-lg' />
+                                                    <button
+                                                        className="text-gray-400 bg-[#f5efe0] absolute top-2 right-2 rounded-lg text-sm focus:outline-none p-1"
+                                                        onClick={handleDeleteImage}
+                                                    >
+                                                        ✕ Delete
+                                                    </button>
+                                                </div>
+                                            ) : (
+                                                <div className='w-full px-4'>
+                                                    <div className='flex justify-center '>
+                                                        <img className='w-40' src="/094.svg" alt="" />
+                                                    </div>
+
+                                                    <div className='flex justify-center mt-5'>
+                                                        <label className='bg-[#white] w-44  mt-5 text-[15px] border border-gray-400 hover:border-black duration-300 ease-in-out  flex justify-center items-center  space-x-4  text-gray-500 px-4 py-2.5 rounded-xl cursor-pointer'>
+                                                            <FaRegFolderOpen className='w-4 h-4' />
+                                                            <span>Browse Images</span>
+                                                            <input type='file' className='hidden' onChange={handleImageUpload} />
+                                                        </label>
+                                                    </div>
+
+                                                    <div className='mt-10'>
+                                                        <div className="inline-flex items-center justify-center w-full">
+                                                            <hr className="w-full h-0.5 my-4 bg-gray-200 border-0 rounded " />
+                                                            <div className="absolute px-4 bg-white">
+                                                                <div className='flex items-center space-x-1'>
+                                                                    <p className="text-black">OR</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="relative mt-6">
+                                                        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                                            <IoIosLink />
+                                                        </div>
+                                                        <input
+                                                            type="url"
+                                                            id="embed-url"
+                                                            value={imageURL}
+                                                            onChange={(e) => setImageURL(e.target.value)}
+                                                            className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 placeholder-gray-400 focus:placeholder-gray-600"
+                                                            placeholder="https://"
+                                                            required
+                                                        />
+                                                        <button
+                                                            type="button"
+                                                            className="text-gray-400 bg-[#f5efe0] absolute right-0.5 bottom-0.5 rounded-lg rounded-l-none border-l flex items-center space-x-2 focus:outline-none font-medium text-md px-4 py-4"
+                                                            onClick={handleEmbed}
+                                                        >
+                                                            <p>Embed</p>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            )}
+                                        </div>
+
+
+
+                                    </div>
+
+
+
+                                    <div className='col-span-12 '>
+                                        <div className="mt-2 w-full">
+
+
+
+
+                                            <div
+                                                className="flex mt-2 items-center space-x-2 cursor-pointer"
+                                                onClick={() => toggleAnswer(0)} // Assuming index 0 for the single question
+                                            >
+                                                <div>
+                                                    {expandedQuestion === 0 ? (
+                                                        <FaCaretDown className="w-6 h-6" />
+                                                    ) : (
+                                                        <MdArrowRight className="w-8 h-8" />
+                                                    )}
+                                                </div>
+                                                <h3 className="text-[20px] md:text-[18px] mt-0.5 font-bold">Tips for adding a photo or video</h3>
+                                            </div>
+
+                                            <CSSTransition
+                                                in={expandedQuestion === 0}
+                                                timeout={100}
+                                                classNames="slide"
+                                                unmountOnExit
+                                            >
+                                                <div className="text-[18px] w-full text-black px-6  mt-4 leading-6">
+                                                    <ul className='list-disc'>
+                                                        <li>
+                                                            <p className='text-sm font-bold'>
+                                                                Choose a photo that captures the emotion of your petition
+                                                            </p>
+                                                            <p className='text-sm '>
+                                                                Photos of people or animals work well.
+                                                            </p>
+                                                        </li>
+                                                        <li>
+                                                            <p className='text-sm font-bold'>
+                                                                Try to upload photos that are 1600 x 900 pixels or larger
+                                                            </p>
+                                                            <p className='text-sm '>
+                                                                Large photos look good on all screen sizes.
+                                                            </p>
+                                                        </li>
+                                                        <li>
+                                                            <p className='text-sm font-bold'>
+                                                                Keep it friendly for all audiences
+                                                            </p>
+                                                            <p className='text-sm '>
+                                                                Make sure your photo doesn’t include graphic violence or sexual content.
+                                                            </p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </CSSTransition>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+
+
+
+
+                        </>}
                     </div>
                 </div>
 
@@ -561,10 +733,13 @@ function Hero() {
                             </button>
                         ) : (
                             <button
-                                className='px-4 py-2 bg-green-500 text-white'
+                                className='px-6 py-2.5 bg-[#6059c9] flex justify-center items-center space-x-2 rounded-lg text-m font-bold text-white'
                                 onClick={() => alert('Campaign Finished')}
                             >
-                                Finish
+                                <p className='mt-0.5'>
+                                    Finish
+                                </p>
+                                <BsFillSendFill className='w-5 h-5 ' />
                             </button>
                         )}
                     </div>
