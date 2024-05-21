@@ -116,7 +116,7 @@ function Hero() {
             <div className='max-w-[940px] mx-auto px-4 pb-12'>
                 <h2 className='text-[32px] font-bold text-center text-[#333] mt-4'>Start a Campaign</h2>
 
-                <div className='flex justify-center mt-10'>
+                <div className='flex justify-center mt-10 hidden md:flex'>
                     {tabTitles.map((tab, index) => (
                         <button
                             key={index}
