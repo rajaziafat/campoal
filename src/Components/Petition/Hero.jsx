@@ -7,6 +7,8 @@ import { FaArrowDown, FaChevronLeft, FaChevronRight, FaExternalLinkAlt, FaEye, F
 import { FaUserLarge } from "react-icons/fa6";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io"
 import { IoLocationSharp, IoMailSharp } from "react-icons/io5";
+import { useInView } from "react-intersection-observer";
+import CountUp from 'react-countup';
 
 
 const initialCardsToShow = 5;
@@ -74,6 +76,11 @@ function Hero() {
         setCardsToShow(cardsToShow + 5); // Increase cards to show by 5
     };
 
+
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.1, // Adjust the threshold as needed
+    });
 
 
     return (
@@ -509,21 +516,30 @@ function Hero() {
 
                         <div className="grid grid-cols-12 mt-5 gap-4 sticky top-12">
 
-                            <div className="col-span-12">
-
+                            <div className="col-span-12" ref={ref}>
                                 <div className="flex space-x-2">
                                     <FaUser className="w-6 h-6" />
-
-                                    <p className="text-[27px] font-bold">103,709 Supporters</p>
+                                    {inView && (
+                                        <p className="text-[27px] font-bold">
+                                            <CountUp start={0} end={103709} duration={2.5} separator="," />
+                                            &nbsp;Supporters
+                                        </p>
+                                    )}
                                 </div>
-
 
                                 <div className="w-full rounded-full mt-2 h-3 bg-[#d3ccc1] relative overflow-hidden">
-                                    <div className="bg-[#6059c9] h-3 rounded-full absolute left-0 top-0" style={{ width: `60%` }}>
-                                        <div className="shine" style={{ width: "100%" }}></div>
+                                    <div
+                                        className="bg-[#6059c9] h-3 rounded-full absolute left-0 top-0"
+                                        style={{ width: `60%` }}
+                                    >
+                                        <div className="shine" style={{ width: '100%' }}></div>
                                     </div>
                                 </div>
-                                <p className="text-[12px] font-bold text-gray-500 text-center mt-2">96,291 needed to reach 200,000</p>
+                                {inView && (
+                                    <p className="text-[12px] font-bold text-gray-500 text-center mt-2">
+                                        <CountUp start={0} end={96291} duration={2.5} separator="," /> needed to reach 200,000
+                                    </p>
+                                )}
                                 <hr className="mt-4 mb-4" />
                             </div>
 
