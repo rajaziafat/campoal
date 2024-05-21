@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AiFillDislike, AiFillLike } from "react-icons/ai";
 import { BiSolidShare } from "react-icons/bi";
 import { BsSend } from "react-icons/bs"
@@ -9,6 +9,7 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io"
 import { IoLocationSharp, IoMailSharp } from "react-icons/io5";
 import { useInView } from "react-intersection-observer";
 import CountUp from 'react-countup';
+import { Transition } from "@headlessui/react";
 
 
 const initialCardsToShow = 5;
@@ -82,6 +83,23 @@ function Hero() {
         threshold: 0.1, // Adjust the threshold as needed
     });
 
+
+    const [showButton, setShowButton] = useState(false);
+    const [lastScrollTop, setLastScrollTop] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            setShowButton(currentScrollTop > lastScrollTop && currentScrollTop > 100);
+            setLastScrollTop(currentScrollTop <= 0 ? 0 : currentScrollTop);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, [lastScrollTop]);
 
     return (
         <div className="bg-white">
@@ -726,6 +744,25 @@ function Hero() {
 
                 </div>
             </div>
+            <Transition
+                show={showButton}
+                enter="transition-opacity duration-500"
+                enterFrom="opacity-0"
+                enterTo="opacity-100"
+                leave="transition-opacity duration-500"
+                leaveFrom="opacity-100"
+                leaveTo="opacity-0"
+
+            >
+                <div className="fixed bottom-0 left-0 right-0 z-50 px-4 py-2 bg-white">
+                    <div className="col-span-12 bg-white " >
+                        <button className='bg-[#6059c9] text-white text-[15px] justify-center w-full flex items-center space-x-2 font-bold px-6 py-3 rounded-xl'>
+                            <FaLock />
+                            <p>Sign</p>
+                        </button>
+                    </div>
+                </div>
+            </Transition>
         </div>
     )
 }
